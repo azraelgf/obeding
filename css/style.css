@@ -702,6 +702,9 @@ textarea.input {
   background: url(../img/main/blur-dark.svg) no-repeat center/cover;
   border-radius: 2.5rem
 }
+.section.contacts-section {
+  padding-bottom: 0
+}
 .section__arrow {
   position: absolute;
   bottom: 100%;
@@ -956,8 +959,7 @@ textarea.input {
 }
 .footer__container {
   position: relative;
-  z-index: 2;
-  border-top: 2px solid var(--border)
+  z-index: 2
 }
 .footer__top {
   display: flex;
@@ -1241,6 +1243,9 @@ textarea.input {
 .teams__container {
   position: relative;
   z-index: 2
+}
+.teams__title {
+  margin-bottom: 3.125rem
 }
 .teams__body.swiper {
   overflow: visible
@@ -1655,10 +1660,38 @@ textarea.input {
   line-height: 1.2;
   font-size: 1.25rem
 }
+.contacts-section {
+  position: relative
+}
+.contacts-section__container {
+  border-bottom: 2px solid var(--border)
+}
 .teams-items {
   display: grid;
   gap: 1.25rem;
   grid-template-columns: repeat(auto-fit,minmax(18.75rem,1fr))
+}
+.team-detail {
+  display: flex;
+  align-items: flex-start
+}
+.team-detail__info {
+  flex: 1 1 auto
+}
+.team-detail__img {
+  flex: 0 0 32%;
+  border-radius: 1.125rem;
+  overflow: hidden
+}
+.info-detail-team {
+  display: grid;
+  gap: 3.125rem
+}
+.info-detail-team__contacts {
+  display: grid;
+  gap: .5rem;
+  color: var(--secondary);
+  transition: color .3s ease-in-out
 }
 .swiper {
   overflow: hidden;
@@ -1833,6 +1866,9 @@ textarea.input {
     left: 0;
     background: url(../img/main/blur-team.svg) no-repeat
   }
+  .inner-page .teams::after {
+    display: none
+  }
   .principles-info__body {
     max-width: 35.625rem
   }
@@ -1895,6 +1931,9 @@ textarea.input {
   .section.section_dark {
     padding-bottom: 8.125rem
   }
+  .section.inner-page {
+    padding-bottom: 8.125rem
+  }
   .section__header {
     margin-bottom: 3.75rem
   }
@@ -1942,6 +1981,15 @@ textarea.input {
   }
   .main-blog {
     min-height: 35.375rem
+  }
+  .contacts-section__container {
+    padding-bottom: 3.75rem
+  }
+  .team-detail:not(:last-child) {
+    margin-bottom: 6.25rem
+  }
+  .specialization__title {
+    margin-bottom: 3.125rem
   }
 }
 @media (min-width:75em) {
@@ -1991,6 +2039,9 @@ textarea.input {
   .interview__logo {
     flex-basis: 16.625rem
   }
+  .team-detail {
+    gap: 3.75rem
+  }
 }
 @media (min-width:120em) {
   .blog__wrapper {
@@ -2027,6 +2078,9 @@ textarea.input {
     flex-basis: 13.75rem
   }
   .blog__wrapper {
+    gap: 1.875rem
+  }
+  .team-detail {
     gap: 1.875rem
   }
 }
@@ -2139,6 +2193,12 @@ textarea.input {
   }
   .item-blog__title {
     font-size: 1.125rem
+  }
+  .team-detail__img {
+    flex: 0 0 38%
+  }
+  .info-detail-team {
+    gap: 1.875rem
   }
 }
 @media (max-width:47.99875em) {
@@ -2330,6 +2390,9 @@ textarea.input {
   .top-footer__navigation {
     flex: 1 1 100%
   }
+  .teams__title {
+    margin-bottom: 1.875rem
+  }
   .teams__wrapper {
     padding-bottom: 1.875rem
   }
@@ -2401,6 +2464,14 @@ textarea.input {
   }
   .teams-items {
     grid-template-columns: repeat(auto-fit,minmax(13.75rem,1fr))
+  }
+  .team-detail {
+    flex-wrap: wrap;
+    justify-content: center
+  }
+  .team-detail__img {
+    flex: 0 0 60%;
+    order: -1
   }
 }
 @media (max-width:47.99875em)and (max-width:29.99875em) {
@@ -2574,6 +2645,13 @@ textarea.input {
   .item-blog__title {
     font-size: 1rem
   }
+  .contacts-section {
+    border-width: 1px
+  }
+  .team-detail__img {
+    flex: 1 1 100%;
+    border-radius: 1rem
+  }
 }
 @media (max-width:25.87375em) {
   .header__contacts {
@@ -2619,6 +2697,9 @@ textarea.input {
   }
   .section.section_dark {
     padding-bottom: 5rem
+  }
+  .section.inner-page {
+    padding-bottom: 3.75rem
   }
   .section__header {
     margin-bottom: 1.875rem
@@ -2667,6 +2748,15 @@ textarea.input {
   }
   .main-blog {
     min-height: 28.75rem
+  }
+  .contacts-section__container {
+    padding-bottom: 2.5rem
+  }
+  .team-detail:not(:last-child) {
+    margin-bottom: 3.75rem
+  }
+  .specialization__title {
+    margin-bottom: 1.875rem
   }
 }
 @media (min-width:47.99875em)and (max-width:61.99875em) {
@@ -2719,6 +2809,9 @@ textarea.input {
   .section.section_dark {
     padding-bottom: clamp(5rem ,4.0546218487rem + 4.2016806723vw ,8.125rem)
   }
+  .section.inner-page {
+    padding-bottom: clamp(3.75rem ,2.4264705882rem + 5.8823529412vw ,8.125rem)
+  }
   .section__header {
     margin-bottom: clamp(1.875rem ,1.3077731092rem + 2.5210084034vw ,3.75rem)
   }
@@ -2767,6 +2860,15 @@ textarea.input {
   .main-blog {
     min-height: clamp(28.75rem ,26.7457983193rem + 8.9075630252vw ,35.375rem)
   }
+  .contacts-section__container {
+    padding-bottom: clamp(2.5rem ,2.1218487395rem + 1.6806722689vw ,3.75rem)
+  }
+  .team-detail:not(:last-child) {
+    margin-bottom: clamp(3.75rem ,2.993697479rem + 3.3613445378vw ,6.25rem)
+  }
+  .specialization__title {
+    margin-bottom: clamp(1.875rem ,1.4968487395rem + 1.6806722689vw ,3.125rem)
+  }
 }
 @media (min-width:62em)and (max-width:75em) {
   .menu__list {
@@ -2796,6 +2898,9 @@ textarea.input {
   }
   .interview__logo {
     flex-basis: clamp(13.75rem ,.0384615385rem + 22.1153846154vw ,16.625rem)
+  }
+  .team-detail {
+    gap: clamp(1.875rem ,-7.0673076923rem + 14.4230769231vw ,3.75rem)
   }
 }
 @media (min-width:30em)and (max-width:75em) {
@@ -2890,6 +2995,9 @@ textarea.input {
     opacity: .6
   }
   .item-blog__title:hover {
+    color: var(--accent)
+  }
+  .info-detail-team__contacts:hover {
     color: var(--accent)
   }
 }
