@@ -408,6 +408,7 @@
     }
     (() => {
         "use strict";
+        const modules_flsModules = {};
         function addLoadedClass() {
             if (!document.documentElement.classList.contains("loading")) window.addEventListener("load", (function() {
                 setTimeout((function() {
@@ -415,7 +416,7 @@
                 }), 0);
             }));
         }
-        function functions_getHash() {
+        function getHash() {
             if (location.hash) return location.hash.replace("#", "");
         }
         function setHash(hash) {
@@ -638,7 +639,7 @@
             const tabs = document.querySelectorAll("[data-tabs]");
             let tabsActiveHash = [];
             if (tabs.length > 0) {
-                const hash = functions_getHash();
+                const hash = getHash();
                 if (hash && hash.startsWith("tab-")) tabsActiveHash = hash.replace("tab-", "").split("-");
                 tabs.forEach(((tabsBlock, index) => {
                     tabsBlock.setAttribute("data-tabs-index", index);
@@ -750,6 +751,30 @@
                 }
             }
         }
+        function tabScroll() {
+            function adjustTabScroll() {
+                const wrapper = document.querySelector(".tabs_main .tabs__navigation-wrapper");
+                const navigation = document.querySelector(".tabs_main .tabs__navigation");
+                const body = document.querySelector(".tabs_main .tabs__content");
+                if (!wrapper || !navigation || !body) return;
+                const navigationHeight = navigation.scrollHeight;
+                const bodyHeight = body.clientHeight;
+                if (navigationHeight > bodyHeight) {
+                    wrapper.style.maxHeight = `${bodyHeight}px`;
+                    wrapper.style.overflowY = "auto";
+                } else {
+                    wrapper.style.maxHeight = "";
+                    wrapper.style.overflowY = "";
+                }
+            }
+            window.addEventListener("load", adjustTabScroll);
+            window.addEventListener("resize", adjustTabScroll);
+            document.querySelectorAll(".tabs_main [data-tabs-titles] .tabs__title").forEach((btn => {
+                btn.addEventListener("click", (() => {
+                    setTimeout(adjustTabScroll, 100);
+                }));
+            }));
+        }
         function menuInit() {
             if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
                 if (bodyLockStatus && e.target.closest(".icon-menu")) {
@@ -763,6 +788,122 @@
                     }));
                 }
             }));
+        }
+        function menuClose() {
+            bodyUnlock();
+            document.documentElement.classList.remove("menu-open");
+        }
+        function showMore() {
+            window.addEventListener("load", (function(e) {
+                const showMoreBlocks = document.querySelectorAll("[data-showmore]");
+                let showMoreBlocksRegular;
+                let mdQueriesArray;
+                if (showMoreBlocks.length) {
+                    showMoreBlocksRegular = Array.from(showMoreBlocks).filter((function(item, index, self) {
+                        return !item.dataset.showmoreMedia;
+                    }));
+                    showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+                    document.addEventListener("click", showMoreActions);
+                    window.addEventListener("resize", showMoreActions);
+                    mdQueriesArray = dataMediaQueries(showMoreBlocks, "showmoreMedia");
+                    if (mdQueriesArray && mdQueriesArray.length) {
+                        mdQueriesArray.forEach((mdQueriesItem => {
+                            mdQueriesItem.matchMedia.addEventListener("change", (function() {
+                                initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                            }));
+                        }));
+                        initItemsMedia(mdQueriesArray);
+                    }
+                }
+                function initItemsMedia(mdQueriesArray) {
+                    mdQueriesArray.forEach((mdQueriesItem => {
+                        initItems(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                    }));
+                }
+                function initItems(showMoreBlocks, matchMedia) {
+                    showMoreBlocks.forEach((showMoreBlock => {
+                        initItem(showMoreBlock, matchMedia);
+                    }));
+                }
+                function initItem(showMoreBlock, matchMedia = false) {
+                    showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
+                    let showMoreContent = showMoreBlock.querySelectorAll("[data-showmore-content]");
+                    let showMoreButton = showMoreBlock.querySelectorAll("[data-showmore-button]");
+                    showMoreContent = Array.from(showMoreContent).filter((item => item.closest("[data-showmore]") === showMoreBlock))[0];
+                    showMoreButton = Array.from(showMoreButton).filter((item => item.closest("[data-showmore]") === showMoreBlock))[0];
+                    const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+                    if (matchMedia.matches || !matchMedia) if (hiddenHeight < getOriginalHeight(showMoreContent)) {
+                        _slideUp(showMoreContent, 0, showMoreBlock.classList.contains("_showmore-active") ? getOriginalHeight(showMoreContent) : hiddenHeight);
+                        showMoreButton.hidden = false;
+                    } else {
+                        _slideDown(showMoreContent, 0, hiddenHeight);
+                        showMoreButton.hidden = true;
+                    } else {
+                        _slideDown(showMoreContent, 0, hiddenHeight);
+                        showMoreButton.hidden = true;
+                    }
+                }
+                function getHeight(showMoreBlock, showMoreContent) {
+                    let hiddenHeight = 0;
+                    const showMoreType = showMoreBlock.dataset.showmore ? showMoreBlock.dataset.showmore : "size";
+                    const rowGap = parseFloat(getComputedStyle(showMoreContent).rowGap) ? parseFloat(getComputedStyle(showMoreContent).rowGap) : 0;
+                    if (showMoreType === "items") {
+                        const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 3;
+                        const showMoreItems = showMoreContent.children;
+                        for (let index = 1; index < showMoreItems.length; index++) {
+                            const showMoreItem = showMoreItems[index - 1];
+                            const marginTop = parseFloat(getComputedStyle(showMoreItem).marginTop) ? parseFloat(getComputedStyle(showMoreItem).marginTop) : 0;
+                            const marginBottom = parseFloat(getComputedStyle(showMoreItem).marginBottom) ? parseFloat(getComputedStyle(showMoreItem).marginBottom) : 0;
+                            hiddenHeight += showMoreItem.offsetHeight + marginTop;
+                            if (index == showMoreTypeValue) break;
+                            hiddenHeight += marginBottom;
+                        }
+                        rowGap ? hiddenHeight += (showMoreTypeValue - 1) * rowGap : null;
+                    } else {
+                        const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 150;
+                        hiddenHeight = showMoreTypeValue;
+                    }
+                    return hiddenHeight;
+                }
+                function getOriginalHeight(showMoreContent) {
+                    let parentHidden;
+                    let hiddenHeight = showMoreContent.offsetHeight;
+                    showMoreContent.style.removeProperty("height");
+                    if (showMoreContent.closest(`[hidden]`)) {
+                        parentHidden = showMoreContent.closest(`[hidden]`);
+                        parentHidden.hidden = false;
+                    }
+                    let originalHeight = showMoreContent.offsetHeight;
+                    parentHidden ? parentHidden.hidden = true : null;
+                    showMoreContent.style.height = `${hiddenHeight}px`;
+                    return originalHeight;
+                }
+                function showMoreActions(e) {
+                    const targetEvent = e.target;
+                    const targetType = e.type;
+                    if (targetType === "click") {
+                        if (targetEvent.closest("[data-showmore-button]")) {
+                            const showMoreButton = targetEvent.closest("[data-showmore-button]");
+                            const showMoreBlock = showMoreButton.closest("[data-showmore]");
+                            const showMoreContent = showMoreBlock.querySelector("[data-showmore-content]");
+                            const showMoreSpeed = showMoreBlock.dataset.showmoreButton ? showMoreBlock.dataset.showmoreButton : "500";
+                            const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+                            if (!showMoreContent.classList.contains("_slide")) {
+                                showMoreBlock.classList.contains("_showmore-active") ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight) : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
+                                showMoreBlock.classList.toggle("_showmore-active");
+                            }
+                        }
+                    } else if (targetType === "resize") {
+                        showMoreBlocksRegular && showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
+                        mdQueriesArray && mdQueriesArray.length ? initItemsMedia(mdQueriesArray) : null;
+                    }
+                }
+            }));
+        }
+        function functions_FLS(message) {
+            setTimeout((() => {
+                if (window.FLS) console.log(message);
+            }), 0);
         }
         function uniqArray(array) {
             return array.filter((function(item, index, self) {
@@ -839,6 +980,44 @@
             }
             videoInit(".video-block__value");
         }
+        let gotoblock_gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+            const targetBlockElement = document.querySelector(targetBlock);
+            if (targetBlockElement) {
+                let headerItem = "";
+                let headerItemHeight = 0;
+                if (noHeader) {
+                    headerItem = "header.header";
+                    const headerElement = document.querySelector(headerItem);
+                    if (!headerElement.classList.contains("_header-scroll")) {
+                        headerElement.style.cssText = `transition-duration: 0s;`;
+                        headerElement.classList.add("_header-scroll");
+                        headerItemHeight = headerElement.offsetHeight;
+                        headerElement.classList.remove("_header-scroll");
+                        setTimeout((() => {
+                            headerElement.style.cssText = ``;
+                        }), 0);
+                    } else headerItemHeight = headerElement.offsetHeight;
+                }
+                let options = {
+                    speedAsDuration: true,
+                    speed,
+                    header: headerItem,
+                    offset: offsetTop,
+                    easing: "easeOutQuad"
+                };
+                document.documentElement.classList.contains("menu-open") ? menuClose() : null;
+                if (typeof SmoothScroll !== "undefined") (new SmoothScroll).animateScroll(targetBlockElement, "", options); else {
+                    let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
+                    targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+                    targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+                    window.scrollTo({
+                        top: targetBlockElementPosition,
+                        behavior: "smooth"
+                    });
+                }
+                functions_FLS(`[gotoBlock]: Юхуу...їдемо до ${targetBlock}`);
+            } else functions_FLS(`[gotoBlock]: Йой... Такого блоку немає на сторінці: ${targetBlock}`);
+        };
         function ssr_window_esm_isObject(obj) {
             return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
         }
@@ -4249,42 +4428,6 @@
             });
         }
         function initSliders() {
-            if (document.querySelector(".footer-slider__body")) new Swiper(".footer-slider__body", {
-                modules: [ Navigation ],
-                observer: true,
-                observeParents: true,
-                slidesPerView: 1,
-                spaceBetween: 0,
-                speed: 800,
-                navigation: {
-                    prevEl: ".swiper-button-prev",
-                    nextEl: ".swiper-button-next"
-                },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1.4,
-                        spaceBetween: 20,
-                        autoHeight: true
-                    },
-                    640: {
-                        slidesPerView: 1,
-                        spaceBetween: 20
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 20
-                    },
-                    992: {
-                        slidesPerView: 4,
-                        spaceBetween: 20
-                    },
-                    1268: {
-                        slidesPerView: 5,
-                        spaceBetween: 30
-                    }
-                },
-                on: {}
-            });
             if (document.querySelector(".teams__body")) new Swiper(".teams__body", {
                 modules: [ Scrollbar ],
                 observer: true,
@@ -4345,11 +4488,136 @@
                 },
                 on: {}
             });
+            const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
+                let swiper;
+                breakpoint = window.matchMedia(breakpoint);
+                const enableSwiper = function(className, settings) {
+                    swiper = new Swiper(className, settings);
+                    if (callback) callback(swiper);
+                };
+                const checker = function() {
+                    if (breakpoint.matches) return enableSwiper(swiperClass, swiperSettings); else {
+                        if (swiper !== void 0) swiper.destroy(true, true);
+                        return;
+                    }
+                };
+                breakpoint.addEventListener("change", checker);
+                checker();
+            };
+            const someFunc = instance => {
+                if (instance) instance.on("slideChange", (function(e) {}));
+            };
+            if (document.querySelector(".footer-slider__body")) resizableSwiper("(min-width: 479.98px)", ".footer-slider__body", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                autoHeight: true,
+                speed: 800,
+                navigation: {
+                    prevEl: ".swiper-button-prev",
+                    nextEl: ".swiper-button-next"
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1.4,
+                        spaceBetween: 20,
+                        autoHeight: true
+                    },
+                    640: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    992: {
+                        slidesPerView: 4,
+                        spaceBetween: 20
+                    },
+                    1268: {
+                        slidesPerView: 5,
+                        spaceBetween: 30
+                    }
+                }
+            }, someFunc);
         }
-        window.addEventListener("load", (function(e) {
-            initSliders();
-        }));
+        window.addEventListener("load", initSliders);
+        window.addEventListener("resize", initSliders);
         let addWindowScrollEvent = false;
+        function pageNavigation() {
+            document.addEventListener("click", pageNavigationAction);
+            document.addEventListener("watcherCallback", pageNavigationAction);
+            function pageNavigationAction(e) {
+                if (e.type === "click") {
+                    const targetElement = e.target;
+                    if (targetElement.closest("[data-goto]")) {
+                        const gotoLink = targetElement.closest("[data-goto]");
+                        const gotoLinkSelector = gotoLink.dataset.goto ? gotoLink.dataset.goto : "";
+                        const noHeader = gotoLink.hasAttribute("data-goto-header") ? true : false;
+                        const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
+                        const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
+                        if (modules_flsModules.fullpage) {
+                            const fullpageSection = document.querySelector(`${gotoLinkSelector}`).closest("[data-fp-section]");
+                            const fullpageSectionId = fullpageSection ? +fullpageSection.dataset.fpId : null;
+                            if (fullpageSectionId !== null) {
+                                modules_flsModules.fullpage.switchingSection(fullpageSectionId);
+                                document.documentElement.classList.contains("menu-open") ? menuClose() : null;
+                            }
+                        } else gotoblock_gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+                        e.preventDefault();
+                    }
+                } else if (e.type === "watcherCallback" && e.detail) {
+                    const entry = e.detail.entry;
+                    const targetElement = entry.target;
+                    if (targetElement.dataset.watch === "navigator") {
+                        document.querySelector(`[data-goto]._navigator-active`);
+                        let navigatorCurrentItem;
+                        if (targetElement.id && document.querySelector(`[data-goto="#${targetElement.id}"]`)) navigatorCurrentItem = document.querySelector(`[data-goto="#${targetElement.id}"]`); else if (targetElement.classList.length) for (let index = 0; index < targetElement.classList.length; index++) {
+                            const element = targetElement.classList[index];
+                            if (document.querySelector(`[data-goto=".${element}"]`)) {
+                                navigatorCurrentItem = document.querySelector(`[data-goto=".${element}"]`);
+                                break;
+                            }
+                        }
+                        if (entry.isIntersecting) navigatorCurrentItem ? navigatorCurrentItem.classList.add("_navigator-active") : null; else navigatorCurrentItem ? navigatorCurrentItem.classList.remove("_navigator-active") : null;
+                    }
+                }
+            }
+            if (getHash()) {
+                let goToHash;
+                if (document.querySelector(`#${getHash()}`)) goToHash = `#${getHash()}`; else if (document.querySelector(`.${getHash()}`)) goToHash = `.${getHash()}`;
+                goToHash ? gotoblock_gotoBlock(goToHash, true, 500, 20) : null;
+            }
+        }
+        function headerScroll() {
+            addWindowScrollEvent = true;
+            const header = document.querySelector("header.header");
+            const headerShow = header.hasAttribute("data-scroll-show");
+            const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
+            const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+            let scrollDirection = 0;
+            let timer;
+            document.addEventListener("windowScroll", (function(e) {
+                const scrollTop = window.scrollY;
+                clearTimeout(timer);
+                if (scrollTop >= startPoint) {
+                    !header.classList.contains("_header-scroll") ? header.classList.add("_header-scroll") : null;
+                    if (headerShow) {
+                        if (scrollTop > scrollDirection) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null; else !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
+                        timer = setTimeout((() => {
+                            !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
+                        }), headerShowTimer);
+                    }
+                } else {
+                    header.classList.contains("_header-scroll") ? header.classList.remove("_header-scroll") : null;
+                    if (headerShow) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null;
+                }
+                scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+            }));
+        }
         setTimeout((() => {
             if (addWindowScrollEvent) {
                 let windowScroll = new Event("windowScroll");
@@ -7889,7 +8157,7 @@
             }));
             gsapWithCSS.to(paths, {
                 strokeDashoffset: 0,
-                duration: 6,
+                duration: 4,
                 stagger: .1,
                 ease: "power2.inOut"
             });
@@ -7995,6 +8263,10 @@
         menuInit();
         spollers();
         tabs();
+        tabScroll();
+        showMore();
+        pageNavigation();
+        headerScroll();
         videoPlayer();
     })();
 })();
