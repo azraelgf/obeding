@@ -226,12 +226,22 @@ h6 {
   transition: rotate .3s cubic-bezier(.65,0,.076,1)
 }
 .button.button_light {
-  justify-content: flex-start;
+  justify-content: center;
   color: var(--secondary);
   background-color: var(--bg-secondary);
   padding: .8125rem 1.25rem
 }
 .button.button_light svg {
+  width: 1.5rem;
+  height: 1.5rem
+}
+.button.button_green {
+  justify-content: center;
+  color: var(--white);
+  background-color: var(--accent);
+  padding: .8125rem 1.25rem
+}
+.button.button_green svg {
   width: 1.5rem;
   height: 1.5rem
 }
@@ -1306,11 +1316,43 @@ textarea.input {
   text-overflow: ellipsis;
   transition: color .3s ease-in-out
 }
+.item-team__contacts li {
+  overflow: hidden;
+  width: 99%;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+.item-team__contacts li+li {
+  margin-top: .3125rem
+}
 .seo-text__title {
   margin-bottom: 3.125rem
 }
 .seo-text__more {
   margin-top: 1.25rem
+}
+.partner {
+  border-radius: .9375rem;
+  background-color: var(--white);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  min-height: 100%
+}
+.partners-items .partner {
+  transition: background-color .3s ease-in-out;
+  cursor: pointer
+}
+.partner__img {
+  padding: 0 2.125rem
+}
+.partner__text {
+  font-weight: 500;
+  color: var(--secondary)
 }
 .hero {
   position: relative;
@@ -1505,25 +1547,6 @@ textarea.input {
 .partners__wrapper {
   padding-bottom: 3.125rem
 }
-.partner {
-  border-radius: .9375rem;
-  background-color: var(--white);
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  min-height: 100%
-}
-.partner__img {
-  padding: 0 1.875rem
-}
-.partner__text {
-  font-weight: 500;
-  color: var(--secondary)
-}
 .review {
   color: var(--primary);
   border-radius: 1.125rem;
@@ -1693,6 +1716,11 @@ textarea.input {
   color: var(--secondary);
   transition: color .3s ease-in-out
 }
+.partners-items {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit,minmax(11.875rem,1fr))
+}
 .swiper {
   overflow: hidden;
   visibility: hidden;
@@ -1752,9 +1780,6 @@ textarea.input {
   }
   .btn-group__btn:first-child {
     min-width: 12.5625rem
-  }
-  .btn-group__btn:last-child {
-    min-width: 18.8125rem
   }
   .about-menu-content__btn:first-child {
     min-width: 12.5rem
@@ -1991,6 +2016,9 @@ textarea.input {
   .specialization__title {
     margin-bottom: 3.125rem
   }
+  .partners-items {
+    grid-template-columns: repeat(auto-fit,minmax(13.6875rem,1fr))
+  }
 }
 @media (min-width:75em) {
   .header .tabs__navigation {
@@ -2153,6 +2181,9 @@ textarea.input {
   }
   .submenu-list {
     flex-wrap: wrap
+  }
+  .partner br {
+    display: none
   }
   .hero__content {
     gap: 1.875rem
@@ -2607,6 +2638,9 @@ textarea.input {
   .item-team {
     max-height: 23.75rem
   }
+  .partner__img {
+    padding: 0 1rem
+  }
   .hero__content {
     gap: 1.25rem
   }
@@ -2651,6 +2685,9 @@ textarea.input {
   .team-detail__img {
     flex: 1 1 100%;
     border-radius: 1rem
+  }
+  .partners-items {
+    grid-template-columns: repeat(auto-fit,minmax(8.75rem,auto))
   }
 }
 @media (max-width:25.87375em) {
@@ -2946,6 +2983,10 @@ textarea.input {
     color: var(--bg-secondary);
     background-color: var(--secondary)
   }
+  .button.button_green:hover {
+    color: var(--bg-secondary);
+    background-color: var(--secondary)
+  }
   .video-btn:hover {
     scale: 1.05
   }
@@ -2988,6 +3029,9 @@ textarea.input {
   .item-team__contacts a:hover {
     color: var(--accent)
   }
+  .partners-items .partner:hover {
+    background-color: var(--bg-secondary)
+  }
   .review__link:hover {
     color: var(--accent)
   }
@@ -3012,5 +3056,10 @@ textarea.input {
   }
   .animate__animated[class*=Out] {
     opacity: 0
+  }
+}
+@media (any-hover:none) {
+  .partners-items .partner {
+    background-color: var(--bg-secondary)
   }
 }
