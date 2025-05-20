@@ -827,18 +827,33 @@
                 }
                 function initItem(showMoreBlock, matchMedia = false) {
                     showMoreBlock = matchMedia ? showMoreBlock.item : showMoreBlock;
-                    let showMoreContent = showMoreBlock.querySelectorAll("[data-showmore-content]");
-                    let showMoreButton = showMoreBlock.querySelectorAll("[data-showmore-button]");
-                    showMoreContent = Array.from(showMoreContent).filter((item => item.closest("[data-showmore]") === showMoreBlock))[0];
-                    showMoreButton = Array.from(showMoreButton).filter((item => item.closest("[data-showmore]") === showMoreBlock))[0];
-                    const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
-                    if (matchMedia.matches || !matchMedia) if (hiddenHeight < getOriginalHeight(showMoreContent)) {
-                        _slideUp(showMoreContent, 0, showMoreBlock.classList.contains("_showmore-active") ? getOriginalHeight(showMoreContent) : hiddenHeight);
-                        showMoreButton.hidden = false;
+                    const showMoreContent = showMoreBlock.querySelector("[data-showmore-content]");
+                    const showMoreButton = showMoreBlock.querySelector("[data-showmore-button]");
+                    const showMoreType = showMoreBlock.dataset.showmore || "size";
+                    if (!showMoreContent || !showMoreButton) return;
+                    if (matchMedia.matches || !matchMedia) if (showMoreType === "items") {
+                        const limit = parseInt(showMoreContent.dataset.showmoreContent) || 3;
+                        const items = Array.from(showMoreContent.children);
+                        const isExpanded = showMoreBlock.classList.contains("_showmore-active");
+                        items.forEach(((el, i) => {
+                            el.style.display = isExpanded || i < limit ? "" : "none";
+                        }));
+                        showMoreButton.hidden = items.length <= limit;
                     } else {
-                        _slideDown(showMoreContent, 0, hiddenHeight);
+                        const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+                        if (hiddenHeight < getOriginalHeight(showMoreContent)) {
+                            _slideUp(showMoreContent, 0, showMoreBlock.classList.contains("_showmore-active") ? getOriginalHeight(showMoreContent) : hiddenHeight);
+                            showMoreButton.hidden = false;
+                        } else {
+                            _slideDown(showMoreContent, 0, hiddenHeight);
+                            showMoreButton.hidden = true;
+                        }
+                    } else if (showMoreType === "items") {
+                        const items = Array.from(showMoreContent.children);
+                        items.forEach((el => el.style.display = ""));
                         showMoreButton.hidden = true;
                     } else {
+                        const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
                         _slideDown(showMoreContent, 0, hiddenHeight);
                         showMoreButton.hidden = true;
                     }
@@ -886,16 +901,26 @@
                             const showMoreButton = targetEvent.closest("[data-showmore-button]");
                             const showMoreBlock = showMoreButton.closest("[data-showmore]");
                             const showMoreContent = showMoreBlock.querySelector("[data-showmore-content]");
-                            const showMoreSpeed = showMoreBlock.dataset.showmoreButton ? showMoreBlock.dataset.showmoreButton : "500";
-                            const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
-                            if (!showMoreContent.classList.contains("_slide")) {
-                                showMoreBlock.classList.contains("_showmore-active") ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight) : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
-                                showMoreBlock.classList.toggle("_showmore-active");
+                            const showMoreType = showMoreBlock.dataset.showmore || "size";
+                            if (showMoreType === "items") {
+                                const limit = parseInt(showMoreContent.dataset.showmoreContent) || 3;
+                                const items = Array.from(showMoreContent.children);
+                                const isExpanded = showMoreBlock.classList.toggle("_showmore-active");
+                                items.forEach(((el, i) => {
+                                    el.style.display = isExpanded || i < limit ? "" : "none";
+                                }));
+                            } else {
+                                const showMoreSpeed = showMoreBlock.dataset.showmoreButton || "500";
+                                const hiddenHeight = getHeight(showMoreBlock, showMoreContent);
+                                if (!showMoreContent.classList.contains("_slide")) {
+                                    showMoreBlock.classList.contains("_showmore-active") ? _slideUp(showMoreContent, showMoreSpeed, hiddenHeight) : _slideDown(showMoreContent, showMoreSpeed, hiddenHeight);
+                                    showMoreBlock.classList.toggle("_showmore-active");
+                                }
                             }
                         }
                     } else if (targetType === "resize") {
-                        showMoreBlocksRegular && showMoreBlocksRegular.length ? initItems(showMoreBlocksRegular) : null;
-                        mdQueriesArray && mdQueriesArray.length ? initItemsMedia(mdQueriesArray) : null;
+                        showMoreBlocksRegular?.length && initItems(showMoreBlocksRegular);
+                        mdQueriesArray?.length && initItemsMedia(mdQueriesArray);
                     }
                 }
             }));
