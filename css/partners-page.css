@@ -1,0 +1,17 @@
+.partners-items {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns:repeat(auto-fit, minmax(11.875rem, 1fr))
+}
+
+@media (min-width: 96.875em) {
+    .partners-items {
+        grid-template-columns:repeat(auto-fit, minmax(13.6875rem, 1fr))
+    }
+}
+
+@media (max-width: 29.99875em) {
+    .partners-items {
+        grid-template-columns:repeat(auto-fit, minmax(8.75rem, auto))
+    }
+}

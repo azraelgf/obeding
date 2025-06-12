@@ -1,0 +1,73 @@
+.video-btn {
+  position: absolute;
+  width: 3.1875rem;
+  height: 3.1875rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  transition: scale .3s ease-in-out
+}
+.video-block {
+  position: relative
+}
+.video-block__value {
+  position: relative
+}
+.video-block__value iframe,
+.video-block__value img {
+  width: 100%;
+  height: auto;
+  border-radius: 1.125rem;
+  aspect-ratio: 16/9
+}
+.video-block video {
+  border-radius: 1.125rem
+}
+.video-block__img {
+  border-radius: 1.125rem;
+  box-shadow: 0 20px 35px rgba(23,56,103,.2)
+}
+@media (min-width:47.99875em) {
+  .video-btn::before {
+    content: "Смотреть видео о компании";
+    width: -webkit-min-content;
+    width: min-content;
+    font-weight: 500;
+    font-size: 1.125rem;
+    white-space: nowrap;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    color: var(--white);
+    translate: -50% 1.25rem
+  }
+}
+
+@media (max-width:29.99875em) {
+  .video-btn {
+    width: 2.5625rem;
+    height: 2.5625rem
+  }
+  .video-block__value iframe,
+  .video-block__value img {
+    width: 100%;
+    border-radius: .625rem
+  }
+  .video-block video {
+    border-radius: .625rem
+  }
+  .video-block__img {
+    border-radius: .625rem
+  }
+}
+@media (min-width:47.99875em)and (max-width:61.99875em) {
+  .video-btn::before {
+    font-size: .875rem
+  }
+}
+@media (any-hover:hover) {
+  .video-btn:hover {
+    scale: 1.05
+  }
+}

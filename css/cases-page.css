@@ -1,0 +1,201 @@
+@font-face {
+  font-family: angelicac;
+  font-display: swap;
+  src: url(../fonts/angelicac.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal
+}
+@font-face {
+  font-family: Manrope;
+  font-display: swap;
+  src: url(../fonts/Manrope-Bold.woff2) format("woff2");
+  font-weight: 700;
+  font-style: normal
+}
+@font-face {
+  font-family: Manrope;
+  font-display: swap;
+  src: url(../fonts/Manrope-ExtraBold.woff2) format("woff2");
+  font-weight: 800;
+  font-style: normal
+}
+@font-face {
+  font-family: Manrope;
+  font-display: swap;
+  src: url(../fonts/Manrope-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal
+}
+@font-face {
+  font-family: Manrope;
+  font-display: swap;
+  src: url(../fonts/Manrope-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal
+}
+@font-face {
+  font-family: Manrope;
+  font-display: swap;
+  src: url(../fonts/Manrope-SemiBold.woff2) format("woff2");
+  font-weight: 600;
+  font-style: normal
+}
+.cases {
+  display: grid;
+  gap: 1.25rem
+}
+.cases__item+.cases__item {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border)
+}
+.cases__item:last-child {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border)
+}
+.case {
+  padding: 1.5625rem 3.75rem 1.5625rem 1.5625rem;
+  display: flex;
+  background-color: var(--white);
+  border-radius: 1.125rem;
+  transition: box-shadow .3s ease-in-out,border .3s ease-in-out;
+  gap: 2.5rem;
+  border: 3px solid transparent
+}
+.case.case_one {
+  border-color: var(--secondary);
+  box-shadow: 0 4px 100px 0 rgba(0,0,0,.1)
+}
+.case__logo {
+  flex: 0 0 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: .9375rem
+}
+.case__brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .9375rem;
+  background-color: var(--bg-secondary);
+  min-height: 15rem
+}
+.case__brand img {
+  width: 8.75rem;
+  height: auto
+}
+.case__btn {
+  min-width: 100%
+}
+.section__block .case__btn {
+  min-width: 100%
+}
+.info-case__title {
+  margin-bottom: 1.25rem;
+  color: var(--accent)
+}
+.benefits-cases__items {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit,minmax(22.5rem,1fr))
+}
+.item-benefits {
+  color: var(--primary);
+  padding: 2rem 1.75rem;
+  background-color: var(--white);
+  border-radius: 1.125rem
+}
+.benefits-cases_grey .item-benefits {
+  background-color: var(--bg-secondary)
+}
+.item-benefits__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.875rem
+}
+.item-benefits__title {
+  line-height: 130%;
+  font-size: 1.25rem
+}
+@media (min-width:47.99875em) {
+  .section__block .case__btn {
+    min-width: 17.125rem
+  }
+}
+@media (min-width:96.875em) {
+  .item-benefits__header {
+    gap: 1.875rem
+  }
+}
+@media (max-width:61.99875em) {
+  .case {
+    border: 2px solid var(--secondary);
+    padding: 1.5625rem;
+    gap: 1.875rem
+  }
+  .case__logo {
+    flex: 0 0 12.5rem
+  }
+  .case__brand {
+    min-height: 12.5rem
+  }
+  .case__brand img {
+    width: 7.5rem
+  }
+  .item-benefits {
+    padding: 1.25rem
+  }
+  .item-benefits__header {
+    margin-bottom: 1.25rem
+  }
+  .item-benefits__title {
+    font-size: 1.125rem
+  }
+  .item-benefits__title br {
+    display: none
+  }
+}
+@media (max-width:47.99875em) {
+  .case {
+    flex-wrap: wrap;
+    justify-content: center
+  }
+  .case__logo {
+    flex: 0 0 16.25rem
+  }
+  .case__brand img {
+    width: 10rem
+  }
+}
+@media (max-width:29.99875em) {
+  .case {
+    border-radius: .75rem
+  }
+  .case__logo {
+    flex: 1 1 100%
+  }
+  .benefits-cases__items {
+    grid-template-columns: 1fr
+  }
+  .benefits-cases_grey .item-benefits {
+    background-size: contain
+  }
+  .item-benefits {
+    border-radius: .75rem
+  }
+}
+@media (max-width:22.5em) {
+  .item-benefits__header {
+    gap: .75rem
+  }
+}
+@media (min-width:22.5em)and (max-width:96.875em) {
+  .item-benefits__header {
+    gap: clamp(.75rem ,.4096638655rem + 1.512605042vw ,1.875rem)
+  }
+}
+@media (any-hover:hover) {
+  .case:hover {
+    border-color: var(--secondary);
+    box-shadow: 0 4px 100px 0 rgba(0,0,0,.1)
+  }
+}

@@ -1,0 +1,13 @@
+
+.reviews-items {
+  display: grid;
+  gap: 1.25rem
+}
+.reviews-items__item+.reviews-items__item {
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border)
+}
+.reviews-items__item:last-child {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border)
+}

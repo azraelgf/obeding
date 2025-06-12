@@ -1,0 +1,29 @@
+.seo-text__title {
+  margin-bottom: 3.125rem
+}
+.seo-text__more {
+  margin-top: 1.25rem
+}
+@media (min-width:96.875em) {
+  ._showmore-active .seo-text__content {
+    margin-top: 1.25rem
+  }
+}
+@media (max-width:47.99875em) {
+  .seo-text__title {
+    margin-bottom: 1.875rem
+  }
+  .seo-text__more {
+    margin-top: 1rem
+  }
+}
+@media (max-width:22.5em) {
+  ._showmore-active .seo-text__content {
+    margin-top: .75rem
+  }
+}
+@media (min-width:22.5em)and (max-width:96.875em) {
+  ._showmore-active .seo-text__content {
+    margin-top: clamp(.75rem ,.5987394958rem + .6722689076vw ,1.25rem)
+  }
+}

@@ -1,0 +1,28 @@
+.breadcrumbs {
+  position: relative;
+  z-index: 2;
+  font-size: 1rem;
+  padding-top: 1.75rem
+}
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap
+}
+.breadcrumbs__item {
+  line-height: 130%
+}
+.breadcrumbs__link {
+  color: var(--accent);
+  display: flex;
+  align-items: center
+}
+.breadcrumbs__link::after {
+  content: ">";
+  font-size: 1rem;
+  margin: 0 .5em
+}
+@media (max-width:29.99875em) {
+  .breadcrumbs {
+    font-size: .875rem
+  }
+}
