@@ -532,7 +532,9 @@ textarea.input {
 .section.contacts-section {
   padding-bottom: 0
 }
-
+.section.inner-page.section_no-bottom {
+  padding-bottom: 0
+}
 .section__block {
   display: flex;
   align-items: flex-start;
@@ -734,9 +736,6 @@ textarea.input {
   .bottom-decoration::before {
     height: 25rem
   }
-  .section.section_no-bottom {
-    padding-bottom: 0;
-  }
 }
 @media (min-width:75em) {
   .section__header {
@@ -928,7 +927,6 @@ textarea.input {
   .section.inner-page {
     padding-bottom: 5rem
   }
-
   .section.section_dark {
     padding-top: 2.5rem
   }
@@ -973,7 +971,6 @@ textarea.input {
   .section.inner-page {
     padding-bottom: clamp(5rem ,4.0546218487rem + 4.2016806723vw ,8.125rem)
   }
-
   .section.section_dark {
     padding-top: clamp(2.5rem ,2.1218487395rem + 1.6806722689vw ,3.75rem)
   }
