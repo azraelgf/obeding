@@ -15,6 +15,9 @@
 	<link rel="stylesheet" href="css/show-more.css?_v=1.0.0">
 	<link rel="stylesheet" href="css/teams.css?_v=1.0.0">
 	<link rel="stylesheet" href="css/spoilers.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/radio.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/noi-slider.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/calc.css?_v=1.0.0">
 	<link rel="stylesheet" href="css/services.css?_v=1.0.0">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
@@ -3318,6 +3321,213 @@
 					</div>
 				</div>
 			</section>
+			<section class="section">
+				<div class="container">
+					<div class="calc">
+						<div class="calc__title">
+							<h2 class="title-page title-page_h2">Калькулятор расчета стоимости регистрации товарного
+								знака</h2>
+							<div class="calc__text">Заполните данные в&nbsp;калькуляторе для предварительного расчета
+								стоимости.
+							</div>
+						</div>
+						<div class="calc__wrapper">
+							<div class="calc__info">
+								<div class="info-calc-item">
+									<div class="info-calc-item__header">
+										<div class="info-calc-item__num">01</div>
+										<div class="info-calc-item__title">Требуется ли предварительный поиск товарного
+											знака?
+										</div>
+									</div>
+									<div class="info-calc-item__body">
+										<div class="options">
+											<div class="options__item">
+												<input id="s_1" class="options__input" checked type="radio" value="1" name="search">
+												<label for="s_1" class="options__label">
+													<span class="options__text">Требуется</span>
+												</label>
+											</div>
+											<div class="options__item">
+												<input id="s_2" class="options__input" type="radio" value="2" name="search">
+												<label for="s_2" class="options__label">
+													<span class="options__text">Не требуется</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info-calc-item">
+									<div class="info-calc-item__header">
+										<div class="info-calc-item__num">02</div>
+										<div class="info-calc-item__title">Выберите тип обозначения</div>
+									</div>
+									<div class="info-calc-item__body _type-options">
+										<div class="options js-options-type">
+											<div class="options__item">
+												<input id="t_1" class="options__input" checked type="radio" value="1" name="type">
+												<label for="t_1" class="options__label">
+													<span class="options__text">Слово</span>
+												</label>
+											</div>
+											<div class="options__item">
+												<input id="t_2" class="options__input" type="radio" value="2" name="type">
+												<label for="t_2" class="options__label">
+													<span class="options__text">Картинка</span>
+												</label>
+											</div>
+											<div class="options__item">
+												<input id="t_3" class="options__input" type="radio" value="3" name="type">
+												<label for="t_3" class="options__label">
+													<span class="options__text">Слово + Картинка</span>
+												</label>
+											</div>
+										</div>
+										<div class="info-calc-item__example example-calc js-example-calc">
+											<div class="example-calc__text text">Например:</div>
+											<div class="example-calc__body">
+												<div class="example-calc__item example-calc__item--word">
+													<img src="img/calc/gazprom.webp" alt="Image">
+													<img src="img/calc/renault.webp" alt="Image">
+												</div>
+												<div class="example-calc__item example-calc__item--image">
+													<img src="img/calc/znak-img.webp" alt="Image">
+												</div>
+												<div class="example-calc__item example-calc__item--word-image">
+													<img src="img/calc/word-plus-img-1.webp" alt="Image">
+													<img src="img/calc/word-plus-img-2.webp" alt="Image">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info-calc-item">
+									<div class="info-calc-item__header">
+										<div class="info-calc-item__num">03</div>
+										<div class="info-calc-item__title">Нужен ли поиск по&nbsp;картинке</div>
+									</div>
+									<div class="info-calc-item__body">
+										<div class="options">
+											<div class="options__item">
+												<input id="si_1" class="options__input" checked type="radio" value="1" name="search-for-img">
+												<label for="si_1" class="options__label">
+													<span class="options__text">Да</span>
+												</label>
+											</div>
+											<div class="options__item">
+												<input id="si_2" class="options__input" type="radio" value="2" name="search-for-img">
+												<label for="si_2" class="options__label">
+													<span class="options__text">Нет</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info-calc-item">
+									<div class="info-calc-item__header">
+										<div class="info-calc-item__num">04</div>
+										<div class="info-calc-item__title">Укажите количество классов МКТУ</div>
+									</div>
+									<div class="info-calc-item__info">
+										<a href="" class="info-calc-item__link">Список классов МКТУ</a>
+										<div class="info-calc-item__text">
+											Классы Международной классификации товаров и&nbsp;услуг описывают области, к&nbsp;которым
+											относятся разные товары и&nbsp;услуги. Мы поможем подобрать нужные классы.
+										</div>
+									</div>
+									<div class="info-calc-item__body">
+										<div class="range-wrapper">
+											<span class="range-label">1</span>
+											<div id="range"></div>
+											<span class="range-label">45</span>
+										</div>
+									</div>
+								</div>
+								<div class="info-calc-item">
+									<div class="info-calc-item__header">
+										<div class="info-calc-item__num">05</div>
+										<div class="info-calc-item__title">Выберите тариф регистрации</div>
+									</div>
+									<div class="info-calc-item__body">
+										<div class="options options_info">
+											<div class="options__item">
+												<input id="tar_1" class="options__input" checked type="radio" value="1" name="tariff">
+												<label for="tar_1" class="options__label">
+													<span class="options__text">
+														<span>Стандартный: <strong>35 000 ₽</strong> </span>
+														<small>Срок регистрации <u>от&nbsp;8&nbsp;до&nbsp;18&nbsp;месяцев</u></small>
+													</span>
+												</label>
+											</div>
+											<div class="options__item">
+												<input id="tar_2" class="options__input" type="radio" value="2" name="tariff">
+												<label for="tar_2" class="options__label">
+													<span class="options__text">
+														<span>Ускоренный: <strong>50 000 ₽</strong></span>
+														<small>Срок регистрации <u>до&nbsp;2&nbsp;месяцев</u></small>
+													</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="calc__result result-calc">
+								<div class="result-calc__title text-xxl">Стоимость услуг</div>
+								<div class="result-calc__body">
+									<div class="result-calc-item">
+										<div class="result-calc-item__body">
+											<div class="result-calc-item__label"><strong>Поиск по&nbsp;заявкам&nbsp;+&nbsp;писменный отчет</strong></div>
+											<div class="result-calc-item__value"><strong>35 000 ₽</strong></div>
+										</div>
+									</div>
+									<div class="result-calc-item">
+										<div class="result-calc-item__body">
+											<div class="result-calc-item__label"><strong>Регистрация товарного знака</strong></div>
+											<div class="result-calc-item__value"><strong>35 000 ₽</strong></div>
+										</div>
+									</div>
+									<div class="result-calc-item">
+										<div class="result-calc-item__title">
+											Размер госпошлин
+										</div>
+										<div class="result-calc-item__body">
+											<div class="result-calc-item__label">Пошлина Роспатента при&nbsp;подаче заявки на&nbsp;регистрацию ТЗ</div>
+											<div class="result-calc-item__value"><strong>35 000 ₽</strong></div>
+										</div>
+									</div>
+									<div class="result-calc-item">
+										<div class="result-calc-item__body">
+											<div class="result-calc-item__label">Пошлина Роспатента при&nbsp;выдаче свидетельства на&nbsp;ТЗ</div>
+											<div class="result-calc-item__value"><strong>35 000 ₽</strong></div>
+										</div>
+									</div>
+									<div class="result-calc-item">
+										<div class="result-calc-item__body">
+											<div class="result-calc-item__label">Ускоренная пошлина</div>
+											<div class="result-calc-item__value"><strong>35 000 ₽</strong></div>
+										</div>
+									</div>
+									<div class="result-calc-item result-calc-item_total">
+										<div class="result-calc-item__body">
+											<div class="result-calc-item__label"><strong>Общая стоимость</strong></div>
+											<div class="result-calc-item__value result-total"><strong>35 000 ₽</strong></div>
+										</div>
+									</div>
+									<button class="result-calc-item__btn button button_anim" type="button">
+										<span class="button__text">Заказать услугу</span>
+										<span class="button__icon">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow"></use>
+											</svg>
+										</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<section class="section teams teams_services-page">
 				<div class="container">
 					<div class="section__header">
@@ -3873,6 +4083,9 @@
 	<script src="js/tabs.js?_v=1.0.0"></script>
 	<script src="js/spoilers.js?_v=1.0.0"></script>
 	<script src="js/show-more.js?_v=1.0.0"></script>
+	<script src="js/v-numb.js?_v=1.0.0"></script>
+	<script src="js/noi-slider.js?_v=1.0.0"></script>
+	<script src="js/calc.js?_v=1.0.0"></script>
 
 </body>
 

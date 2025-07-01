@@ -456,6 +456,9 @@ textarea.input {
 .section_dark .title-page {
   color: var(--white)
 }
+.calc__title .title-page {
+  color: var(--white)
+}
 .text-xxl {
   font-weight: 600;
   font-size: 1.5rem
