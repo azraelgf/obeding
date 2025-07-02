@@ -3336,6 +3336,27 @@
 								<div class="info-calc-item">
 									<div class="info-calc-item__header">
 										<div class="info-calc-item__num">01</div>
+										<div class="info-calc-item__title">Введите свои данные для расчета </div>
+									</div>
+									<div class="info-calc-item__body form">
+										<div class="form__row">
+											<div class="form__column">
+												<div class="form__input">
+													<input class="input js-name" autocomplete="off" type="text" placeholder="Ваше имя">
+												</div>
+											</div>
+											<div class="form__column">
+												<div class="form__input">
+													<input class="input js-phone" autocomplete="off" type="text" placeholder="Телефон">
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info-calc-item">
+									<div class="info-calc-item__header">
+										<div class="info-calc-item__num">02</div>
 										<div class="info-calc-item__title">Требуется ли предварительный поиск товарного
 											знака?
 										</div>
@@ -3359,7 +3380,7 @@
 								</div>
 								<div class="info-calc-item">
 									<div class="info-calc-item__header">
-										<div class="info-calc-item__num">02</div>
+										<div class="info-calc-item__num">03</div>
 										<div class="info-calc-item__title">Выберите тип обозначения</div>
 									</div>
 									<div class="info-calc-item__body _type-options">
@@ -3401,9 +3422,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="info-calc-item">
+								<div class="info-calc-item info-calc-item_search hidden">
 									<div class="info-calc-item__header">
-										<div class="info-calc-item__num">03</div>
+										<div class="info-calc-item__num"></div>
 										<div class="info-calc-item__title">Нужен ли поиск по&nbsp;картинке</div>
 									</div>
 									<div class="info-calc-item__body">
@@ -3475,46 +3496,52 @@
 							<div class="calc__result result-calc">
 								<div class="result-calc__title text-xxl">Стоимость услуг</div>
 								<div class="result-calc__body">
-									<div class="result-calc-item">
+									<div class="result-calc-item js-search-price" data-price="35000">
 										<div class="result-calc-item__body">
 											<div class="result-calc-item__label"><strong>Поиск по&nbsp;заявкам&nbsp;+&nbsp;писменный отчет</strong></div>
-											<div class="result-calc-item__value"><strong>35 000 ₽</strong></div>
+											<div class="result-calc-item__value"><strong></strong></div>
 										</div>
 									</div>
-									<div class="result-calc-item">
+									<div class="result-calc-item js-reg-price" data-price="15000">
 										<div class="result-calc-item__body">
 											<div class="result-calc-item__label"><strong>Регистрация товарного знака</strong></div>
-											<div class="result-calc-item__value"><strong>35 000 ₽</strong></div>
+											<div class="result-calc-item__value"><strong></strong></div>
 										</div>
 									</div>
-									<div class="result-calc-item">
+									<div class="result-calc-item js-gosposhlina-podacha" data-formal="4000" data-expert="13000">
 										<div class="result-calc-item__title">
 											Размер госпошлин
 										</div>
 										<div class="result-calc-item__body">
 											<div class="result-calc-item__label">Пошлина Роспатента при&nbsp;подаче заявки на&nbsp;регистрацию ТЗ</div>
-											<div class="result-calc-item__value"><strong>35 000 ₽</strong></div>
+											<div class="result-calc-item__value"><strong></strong></div>
 										</div>
 									</div>
-									<div class="result-calc-item">
+									<div class="result-calc-item js-gosposhlina-vidacha" data-price="18000">
 										<div class="result-calc-item__body">
 											<div class="result-calc-item__label">Пошлина Роспатента при&nbsp;выдаче свидетельства на&nbsp;ТЗ</div>
-											<div class="result-calc-item__value"><strong>35 000 ₽</strong></div>
+											<div class="result-calc-item__value"><strong></strong></div>
 										</div>
 									</div>
-									<div class="result-calc-item">
+									<div class="result-calc-item" data-price="3000">
 										<div class="result-calc-item__body">
-											<div class="result-calc-item__label">Ускоренная пошлина</div>
-											<div class="result-calc-item__value"><strong>35 000 ₽</strong></div>
+											<div class="result-calc-item__label">Бумажное свидетельство</div>
+											<div class="result-calc-item__value"><strong></strong></div>
+										</div>
+									</div>
+									<div class="result-calc-item js-tariff-price" data-price-base="94400" data-standard="35000" data-fast="50000">
+										<div class="result-calc-item__body">
+											<div class="result-calc-item__label"></div>
+											<div class="result-calc-item__value"><strong></strong></div>
 										</div>
 									</div>
 									<div class="result-calc-item result-calc-item_total">
 										<div class="result-calc-item__body">
 											<div class="result-calc-item__label"><strong>Общая стоимость</strong></div>
-											<div class="result-calc-item__value result-total"><strong>35 000 ₽</strong></div>
+											<div class="result-calc-item__value result-total js-result-total"><strong></strong></div>
 										</div>
 									</div>
-									<button class="result-calc-item__btn button button_anim" type="button">
+									<button class="result-calc-item__btn _disabled button button_anim" type="button">
 										<span class="button__text">Заказать услугу</span>
 										<span class="button__icon">
 											<svg>

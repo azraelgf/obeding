@@ -1533,7 +1533,7 @@
     function rangeInit() {
         const priceSlider = document.querySelector("#range");
         if (priceSlider) initialize(priceSlider, {
-            start: 1,
+            start: 2,
             connect: [ true, false ],
             range: {
                 min: [ 1 ],
