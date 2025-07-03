@@ -229,6 +229,5 @@
             }));
         }
     }), 0);
-    window["FLS"] = false;
     spollers();
 })();

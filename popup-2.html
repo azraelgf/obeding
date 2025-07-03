@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/common.css?_v=1.0.3">
+	<link rel="stylesheet" href="css/swiper.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/video-block.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/header.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/footer.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/spoilers.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/tabs.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/teams.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/partners.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/review.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/contact-section.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/popup.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/home.css?_v=1.0.0">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	 <style>body{opacity: 0;}</style>-->
+	<style>
+		/* Начальное состояние */
+		body {
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+
+		/* Класс, добавляемый после загрузки */
+		html.loaded body {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container  animate__fadeIn">
+				<a href="/" class="header__logo animate__fadeInUp logo">
+					<picture>
+						<source media="(min-width: 480px)" srcset="img/logo.webp">
+						<img class="logo__img logo__img_dark" src="img/logo_m.svg" alt="Logo">
+					</picture>
+					<picture>
+						<source media="(min-width: 480px)" srcset="img/logo_w.webp">
+						<img class="logo__img logo__img_white" src="img/logo_w-m.svg" alt="Logo">
+					</picture>
+				</a>
+				<div class="header__actions">
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item animate__fadeInUp"><a href="#" class="menu__link menu__link_icon has-submenu">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#burger"></use>
+										</svg>
+										<span>Услуги</span></a>
+									<div class="submenu">
+										<div class="submenu__container">
+											<div class="submenu__tabs tabs" data-tabs>
+												<nav data-tabs-titles class="tabs__navigation">
+													<button type="button" class="tabs__title _tab-active">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#tov_znaki"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															Товарные знаки
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#patent"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															Патенты
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#sudi"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															Суды и споры
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#e-comm"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															E-commerce
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#dogovor"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															Договоры
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#zachita"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															Защита IT технологий
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+												</nav>
+												<div data-tabs-body class="tabs__content">
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		товарные знаки
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Регистрация ТЗ в России
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Ускоренная регистрация ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Ответ на уведомление или отказ в регистрации ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Проверка на уникальность
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Международная регистрация ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Разработка логотипа и нейминга
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Возражение против регистрации товарного знака по заявке
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		Патенты
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Патентование изобретений
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Полезные модели
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Промышленные образцы
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Международное патентование
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Возражение против регистрации товарного знака по заявке
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		Суды и споры
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Аннулирование товарного знака
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Борьба с параллельным импортом
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Оспаривание решения Роспатента
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Борьба с контрафактом
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Защита товарного знака в суде
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		E-commerce
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Аннулирование товарного знака
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Борьба с параллельным импортом
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Оспаривание решения Роспатента
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Борьба с контрафактом
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Защита товарного знака в суде
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		Договоры
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Регистрация ТЗ в России
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Ускоренная регистрация ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Ответ на уведомление или отказ в регистрации ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Проверка на уникальность
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Международная регистрация ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Разработка логотипа и нейминга
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Возражение против регистрации товарного знака по заявке
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		Защита IT технологий
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Патентование изобретений
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Полезные модели
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Промышленные образцы
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Международное патентование
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Возражение против регистрации товарного знака по заявке
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="menu__item  animate__fadeInUp"><a href="#" class="menu__link has-submenu">
+										О нас
+									</a>
+									<div class="submenu">
+										<div class="submenu__container">
+											<div class="submenu__tabs tabs" data-tabs>
+												<nav data-tabs-titles class="tabs__navigation">
+													<button type="button" class="tabs__title _tab-active">
+														<span class="tabs__title-icon icon-title icon-title_num">01</span>
+														<span class="tabs__title-text">
+															О компании
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title icon-title_num">02</span>
+														<span class="tabs__title-text">
+															Команда
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title icon-title_num">03</span>
+														<span class="tabs__title-text">
+															Наши клиенты
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title icon-title_num">04</span>
+														<span class="tabs__title-text">
+															Отзывы
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title icon-title_num">05</span>
+														<span class="tabs__title-text">
+															Партнерство
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+												</nav>
+												<div data-tabs-body class="tabs__content">
+													<div class="tabs__body">
+														<div class="about-menu-content">
+															<button class="btn-back" type="button">
+																О нас
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#arrow"></use>
+																</svg>
+															</button>
+															<div class="about-menu-content__title text-xxl">
+																О нас
+															</div>
+															<div class="about-menu-content__text text">
+																<p>
+																	Институт интеллектуальной собственности не очень сильно
+																	развивался. Ведь в Советском Союзе понятия коммерции не
+																	было.
+																	Это потом сложилось более-менее логичное и
+																	понятное законодательство. Были отдельные законы: об
+																	авторских
+																	правах, о товарных знаках, о патентах, которые впоследствии
+																	легли в основу четвёртой части Гражданского кодекса —
+																	«библии»
+																	юриста по защите интеллектуальных прав.
+																</p>
+
+																<p> Когда в 2002-м я поступал, то я уже понимал, что к тому
+																	моменту,
+																	когда я закончу вуз, это будет востребованная специализация.
+																	Это
+																	будет очень интересное дело, и оно будет связано, в том
+																	числе, и
+																	с творчеством.</p>
+															</div>
+															<div class="about-menu-content__actions">
+																<a href="" class="button about-menu-content__btn">
+																	<span class="button__text">О компании</span>
+																	<span class="button__icon">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</span>
+																</a>
+																<a href="" class="button button_light about-menu-content__btn">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#doc"></use>
+																	</svg>
+																	<span>Смотреть презентацию</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="about-menu-content">
+															<button class="btn-back" type="button">
+																Команда
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#arrow"></use>
+																</svg>
+															</button>
+															<div class="about-menu-content__title text-xxl">
+																Команда
+															</div>
+															<div class="about-menu-content__text text">
+																<p>
+																	Институт интеллектуальной собственности не очень сильно
+																	развивался. Ведь в Советском Союзе понятия коммерции не
+																	было.
+																	Это потом сложилось более-менее логичное и
+																	понятное законодательство. Были отдельные законы: об
+																	авторских
+																	правах, о товарных знаках, о патентах, которые впоследствии
+																	легли в основу четвёртой части Гражданского кодекса —
+																	«библии»
+																	юриста по защите интеллектуальных прав.
+																</p>
+
+																<p> Когда в 2002-м я поступал, то я уже понимал, что к тому
+																	моменту,
+																	когда я закончу вуз, это будет востребованная специализация.
+																	Это
+																	будет очень интересное дело, и оно будет связано, в том
+																	числе, и
+																	с творчеством.</p>
+															</div>
+															<div class="about-menu-content__actions">
+																<a href="" class="button about-menu-content__btn">
+																	<span class="button__text">Команда</span>
+																	<span class="button__icon">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</span>
+																</a>
+																<a href="" class="button button_light about-menu-content__btn">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#doc"></use>
+																	</svg>
+																	<span>Смотреть презентацию</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="about-menu-content">
+															<button class="btn-back" type="button">
+																Наши клиенты
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#arrow"></use>
+																</svg>
+															</button>
+															<div class="about-menu-content__title text-xxl">
+																Наши клиенты
+															</div>
+															<div class="about-menu-content__text text">
+																<p>
+																	Институт интеллектуальной собственности не очень сильно
+																	развивался. Ведь в Советском Союзе понятия коммерции не
+																	было.
+																	Это потом сложилось более-менее логичное и
+																	понятное законодательство. Были отдельные законы: об
+																	авторских
+																	правах, о товарных знаках, о патентах, которые впоследствии
+																	легли в основу четвёртой части Гражданского кодекса —
+																	«библии»
+																	юриста по защите интеллектуальных прав.
+																</p>
+
+																<p> Когда в 2002-м я поступал, то я уже понимал, что к тому
+																	моменту,
+																	когда я закончу вуз, это будет востребованная специализация.
+																	Это
+																	будет очень интересное дело, и оно будет связано, в том
+																	числе, и
+																	с творчеством.</p>
+															</div>
+															<div class="about-menu-content__actions">
+																<a href="" class="button about-menu-content__btn">
+																	<span class="button__text">Наши клиенты</span>
+																	<span class="button__icon">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</span>
+																</a>
+																<a href="" class="button button_light about-menu-content__btn">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#doc"></use>
+																	</svg>
+																	<span>Смотреть презентацию</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="about-menu-content">
+															<button class="btn-back" type="button">
+																Отзывы
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#arrow"></use>
+																</svg>
+															</button>
+															<div class="about-menu-content__title text-xxl">
+																Отзывы
+															</div>
+															<div class="about-menu-content__text text">
+																<p>
+																	Институт интеллектуальной собственности не очень сильно
+																	развивался. Ведь в Советском Союзе понятия коммерции не
+																	было.
+																	Это потом сложилось более-менее логичное и
+																	понятное законодательство. Были отдельные законы: об
+																	авторских
+																	правах, о товарных знаках, о патентах, которые впоследствии
+																	легли в основу четвёртой части Гражданского кодекса —
+																	«библии»
+																	юриста по защите интеллектуальных прав.
+																</p>
+
+																<p> Когда в 2002-м я поступал, то я уже понимал, что к тому
+																	моменту,
+																	когда я закончу вуз, это будет востребованная специализация.
+																	Это
+																	будет очень интересное дело, и оно будет связано, в том
+																	числе, и
+																	с творчеством.</p>
+															</div>
+															<div class="about-menu-content__actions">
+																<a href="" class="button about-menu-content__btn">
+																	<span class="button__text">Отзывы</span>
+																	<span class="button__icon">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</span>
+																</a>
+																<a href="" class="button button_light about-menu-content__btn">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#doc"></use>
+																	</svg>
+																	<span>Смотреть презентацию</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="about-menu-content">
+															<button class="btn-back" type="button">
+																Партнерство
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#arrow"></use>
+																</svg>
+															</button>
+															<div class="about-menu-content__title text-xxl">
+																Партнерство
+															</div>
+															<div class="about-menu-content__text text">
+																<p>
+																	Институт интеллектуальной собственности не очень сильно
+																	развивался. Ведь в Советском Союзе понятия коммерции не
+																	было.
+																	Это потом сложилось более-менее логичное и
+																	понятное законодательство. Были отдельные законы: об
+																	авторских
+																	правах, о товарных знаках, о патентах, которые впоследствии
+																	легли в основу четвёртой части Гражданского кодекса —
+																	«библии»
+																	юриста по защите интеллектуальных прав.
+																</p>
+
+																<p> Когда в 2002-м я поступал, то я уже понимал, что к тому
+																	моменту,
+																	когда я закончу вуз, это будет востребованная специализация.
+																	Это
+																	будет очень интересное дело, и оно будет связано, в том
+																	числе, и
+																	с творчеством.</p>
+															</div>
+															<div class="about-menu-content__actions">
+																<a href="" class="button about-menu-content__btn">
+																	<span class="button__text">Партнерство</span>
+																	<span class="button__icon">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</span>
+																</a>
+																<a href="" class="button button_light about-menu-content__btn">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#doc"></use>
+																	</svg>
+																	<span>Смотреть презентацию</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="menu__item animate__fadeInUp"><a href="#" class="menu__link">Блог</a></li>
+								<li class="menu__item  animate__fadeInUp"><a href="#" class="menu__link">Кейсы</a></li>
+								<li class="menu__item  animate__fadeInUp"><a href="#" class="menu__link">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__contacts  animate__fadeInUp">
+						<a class="header__tel" href="tel:+74994600013">+7 499 460 00 13</a>
+						<a class="header__message" href="">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#tg"></use>
+							</svg>
+						</a>
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page">
+			<div class="hero">
+				<img src="img/main/hero-bg.webp" alt="Image" class="hero__bg ibg">
+				<div class="container">
+					<div class="hero__content">
+						<div class="hero__title">
+							<div class="hero__subtitle wow animate__fadeInLeft" id="heading">Юридическая компания</div>
+							<svg class="hero__title-svg" viewBox="0 0 1175 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+								<g class="">
+									<path d="M1.47461 75.2355L9.96608 64.6859C13.9634 69.1432 19.7222 72.9061 25.2778 72.9061C29.4784 72.9061 34.8307 71.271 34.8307 65.7387C34.8307 61.7742 31.6012 58.8624 24.1938 58.8624H17.9607V44.3484H23.8099C28.304 44.3484 32.211 42.4222 32.211 38.1665C32.211 33.9108 29.0945 31.8726 24.6906 31.8726C20.1965 31.8726 16.1992 33.9108 12.5858 38.928L3.62006 28.4681C8.0013 22.1742 16.696 17.3362 26.7458 17.3362C38.9409 17.3362 47.8163 24.0108 47.8163 36.397C47.8163 41.235 45.3773 46.745 39.2345 50.8215V51.1126C47.3421 53.6212 50.4586 59.5344 50.4586 67.2617C50.4586 79.7375 38.1731 87.3977 25.9779 87.3977C12.1115 87.4201 5.088 80.6559 1.47461 75.2355Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+									<path d="M79.6143 18.5458H93.571L121.959 86.2779H105.269L99.6008 72.055H72.5907L66.9222 86.2779H51.2266L79.6143 18.5458ZM78.4399 57.5186H93.7516L86.1409 38.3682L78.4399 57.5186Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+									<path d="M125.639 18.5458H141.244V71.7639H157.82V18.5458H173.426V71.7639H190.002V18.5458H205.608V71.7639H214.867V97.8802H200.233V86.2779H125.639V18.5458Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+									<path d="M220.559 86.2555V18.5458H236.164V60.632L266.403 18.5458H280.067V86.2779H264.461V44.1693L234.222 86.2555H220.559Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+									<path d="M284.764 18.5458H341.336V33.0598H320.852V86.2779H305.247V33.0374H284.764V18.5458Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+									<path d="M360.352 18.5458H374.308L402.696 86.2779H386.007L380.338 72.055H353.306L347.637 86.2779H331.941L360.352 18.5458ZM359.177 57.5186H374.489L366.878 38.3682L359.177 57.5186Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								</g>
+
+								<path d="M427.472 71.7414H434.789C437.522 68.2473 443.664 54.226 444.635 32.0742L445.223 18.5233H489.803V71.7414H499.062V97.8801H484.428V86.2778H442.083V97.8801H427.449L427.472 71.7414ZM451.952 71.7414H474.197V33.0373H460.354L459.27 44.4604C458.208 56.1747 454.301 68.7401 451.952 71.7414Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M504.73 18.5458H545.223V33.0598H520.336V44.9532H542.287V59.4673H520.336V71.7639H546.194V86.2779H504.73V18.5458Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M555.746 86.2554V18.5457C559.54 18.5457 571.351 18.3441 576.613 18.3441C597.39 18.3441 604.233 29.0728 604.233 40.7871C604.233 52.8821 594.771 63.5213 578.962 63.5213C577.494 63.5213 573.79 63.5213 571.351 63.2301V86.2554H555.746ZM571.351 33.0373V48.5145C573.587 48.8057 576.229 49.0072 578.465 49.0072C582.553 49.0072 587.634 47.2602 587.634 40.6751C587.634 34.6724 583.727 32.8357 578.172 32.8357C576.139 32.8581 574.581 32.9477 571.351 33.0373Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M605.994 75.2356L614.486 64.6861C618.483 69.1433 624.242 72.9062 629.797 72.9062C633.998 72.9062 639.35 71.2711 639.35 65.7388C639.35 61.7743 636.121 58.8625 628.713 58.8625H622.48V44.3485H628.329C632.824 44.3485 636.708 42.4223 636.708 38.1666C636.708 33.911 633.591 31.8727 629.188 31.8727C624.693 31.8727 620.696 33.911 617.083 38.9282L608.117 28.4682C612.498 22.1743 621.193 17.3363 631.243 17.3363C643.438 17.3363 652.313 24.011 652.313 36.3972C652.313 41.2352 649.874 46.7451 643.732 50.8216V51.1128C651.816 53.6214 654.956 59.5345 654.956 67.2619C654.956 79.7377 642.67 87.3978 630.475 87.3978C616.609 87.4202 609.585 80.656 605.994 75.2356Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M664.51 18.5458H680.115V48.0666L702.45 18.5458H721.172L695.517 49.7912L723.227 86.2779H703.421L680.115 54.0693V86.2779H664.51V18.5458Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M726.953 86.2555V18.5458H742.558V60.632L772.798 18.5458H786.461V86.2779H770.856V44.1693L740.594 86.2555H726.953Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M833.187 51.7174L855.929 86.2554H837.591L822.956 63.5213L808.526 86.2554H790.188L812.929 51.7174L791.272 18.5233H809.609L823.453 40.2944L836.733 18.5233H855.07L833.187 51.7174Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M888.494 86.2555V18.5458H904.099V60.632L934.339 18.5458H948.002V86.2779H932.397V44.1693L902.157 86.2555H888.494Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M952.677 71.7414H959.994C962.727 68.2473 968.869 54.226 969.841 32.0742L970.428 18.5233H1015.01V71.7414H1024.27V97.8801H1009.63V86.2778H967.289V97.8801H952.654V71.7414H952.677ZM977.158 71.7414H999.403V33.0373H985.559L984.497 44.4604C983.413 56.1747 979.506 68.7401 977.158 71.7414Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M1029.94 18.5458H1070.43V33.0598H1045.56V44.9532H1067.51V59.4673H1045.56V71.7639H1071.42V86.2779H1029.96L1029.94 18.5458Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M1080.95 86.2555V18.5458H1096.56V60.632L1126.8 18.5458H1140.46V86.2779H1124.86V44.1693L1094.62 86.2555H1080.95ZM1106.31 1.12C1106.31 4.7933 1108.08 5.958 1112.37 5.958C1116.07 5.958 1118.01 5.28606 1118.01 1.12H1132.65C1132.85 10.5048 1124.56 16.5971 1112.37 16.5971C1099.2 16.5971 1091.68 10.4152 1091.68 1.12H1106.31Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M1162.82 18.7473H1159.91V27.2589H1158.96V18.7473H1156.04V17.8513H1162.82V18.7473Z" stroke="white" stroke-width="0.961008" stroke-miterlimit="10" />
+								<path d="M1173.8 27.2813H1172.85V19.2849L1169.53 24.795H1169.39L1166.07 19.2849V27.2589H1165.12V17.8513H1166.3L1169.46 23.0927L1172.62 17.8513H1173.8V27.2813Z" stroke="white" stroke-width="0.961008" stroke-miterlimit="10" />
+							</svg>
+							<svg class="hero__title-svg hero__title-svg_hidden" viewBox="0 0 395 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.73633 35.7179L5.97122 30.7095C7.96477 32.8256 10.8368 34.612 13.6075 34.612C15.7025 34.612 18.3718 33.8358 18.3718 31.2093C18.3718 29.3272 16.7612 27.9448 13.0669 27.9448H9.95833V21.0543H12.8754C15.1168 21.0543 17.0653 20.1398 17.0653 18.1195C17.0653 16.0991 15.511 15.1315 13.3147 15.1315C11.0734 15.1315 9.07981 16.0991 7.27773 18.481L2.80631 13.5152C4.99134 10.5272 9.3276 8.23035 14.3396 8.23035C20.4217 8.23035 24.848 11.3991 24.848 17.2794C24.848 19.5763 23.6316 22.1921 20.5681 24.1274V24.2656C24.6115 25.4566 26.1658 28.2638 26.1658 31.9324C26.1658 37.8552 20.0387 41.4919 13.9567 41.4919C7.04121 41.5025 3.53841 38.2912 1.73633 35.7179Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M40.7064 8.80457H47.667L61.8246 40.9602H53.5012L50.6742 34.208H37.2036L34.3766 40.9602H26.5488L40.7064 8.80457ZM40.1208 27.3068H47.7571L43.9614 18.2152L40.1208 27.3068Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M63.6582 8.80457H71.4409V34.0697H79.708V8.80457H87.4907V34.0697H95.7578V8.80457H103.541V34.0697H108.158V46.4684H100.86V40.9602H63.6582V8.80457Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M110.998 40.9496V8.80457H118.781V28.7849L133.862 8.80457H140.676V40.9602H132.893V20.9693L117.812 40.9496H110.998Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M143.018 8.80457H171.231V15.6951H161.016V40.9602H153.233V15.6844H143.018V8.80457Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M180.716 8.80457H187.676L201.834 40.9602H193.511L190.684 34.208H177.202L174.375 40.9602H166.547L180.716 8.80457ZM180.13 27.3068H187.766L183.971 18.2152L180.13 27.3068Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M367.949 47.4254H366.496V51.4662H366.023V47.4254H364.57V47H367.949V47.4254Z" stroke="white" stroke-width="0.961008" stroke-miterlimit="10" />
+								<path d="M373.423 51.4769H372.95V47.6806L371.294 50.2965H371.226L369.571 47.6806V51.4662H369.098V47H369.683L371.26 49.4883L372.837 47H373.423V51.4769Z" stroke="white" stroke-width="0.961008" stroke-miterlimit="10" />
+								<path d="M1.01126 80.5274H4.66048C6.0233 78.8685 9.08684 72.212 9.57115 61.6955L9.86399 55.2622H32.0972V80.5274H36.715V92.9366H29.4166V87.4285H8.29843V92.9366H1L1.01126 80.5274ZM13.2204 80.5274H24.3144V62.1527H17.4102L16.8696 67.5758C16.3402 73.1371 14.3917 79.1025 13.2204 80.5274Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M39.541 55.2728H59.7356V62.1633H47.3237V67.8097H58.2714V74.7002H47.3237V80.538H60.2199V87.4285H39.541V55.2728Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M64.9844 87.4178V55.2728C66.8766 55.2728 72.7671 55.1771 75.3914 55.1771C85.7534 55.1771 89.166 60.2706 89.166 65.8319C89.166 71.574 84.4468 76.6249 76.5627 76.6249C75.8306 76.6249 73.9835 76.6249 72.7671 76.4866V87.4178H64.9844ZM72.7671 62.1527V69.5004C73.8822 69.6387 75.1999 69.7344 76.3149 69.7344C78.3535 69.7344 80.8878 68.905 80.8878 65.7787C80.8878 62.9289 78.9392 62.057 76.1685 62.057C75.1549 62.0676 74.3777 62.1102 72.7671 62.1527Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M90.0449 82.1862L94.2798 77.1778C96.2734 79.2939 99.1454 81.0803 101.916 81.0803C104.011 81.0803 106.68 80.304 106.68 77.6776C106.68 75.7954 105.07 74.4131 101.376 74.4131H98.2669V67.5226H101.184C103.425 67.5226 105.363 66.6081 105.363 64.5877C105.363 62.5674 103.808 61.5997 101.612 61.5997C99.3707 61.5997 97.3771 62.5674 95.5751 64.9493L91.1036 59.9834C93.2887 56.9954 97.625 54.6986 102.637 54.6986C108.719 54.6986 113.145 57.8674 113.145 63.7477C113.145 66.0445 111.929 68.6604 108.865 70.5957V70.7339C112.898 71.9249 114.463 74.7321 114.463 78.4006C114.463 84.3235 108.336 87.9601 102.254 87.9601C95.3386 87.9708 91.8357 84.7595 90.0449 82.1862Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M119.229 55.2728H127.011V69.2878L138.15 55.2728H147.487L134.693 70.1065L148.512 87.4285H138.635L127.011 72.1375V87.4285H119.229V55.2728Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M150.369 87.4178V55.2728H158.152V75.2531L173.233 55.2728H180.047V87.4285H172.264V67.4375L157.172 87.4178H150.369Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M203.351 71.021L214.693 87.4179H205.547L198.249 76.6249L191.052 87.4179H181.906L193.248 71.021L182.447 55.2622H191.592L198.497 65.598L205.119 55.2622H214.265L203.351 71.021Z" stroke="#24936A" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M230.934 87.4178V55.2728H238.716V75.2531L253.797 55.2728H260.612V87.4285H252.829V67.4375L237.748 87.4178H230.934Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M262.943 80.5274H266.592C267.955 78.8685 271.019 72.212 271.503 61.6955L271.796 55.2622H294.029V80.5274H298.647V92.9366H291.348V87.4285H270.23V92.9366H262.932V80.5274H262.943ZM275.152 80.5274H286.246V62.1527H279.342L278.812 67.5758C278.272 73.1371 276.323 79.1025 275.152 80.5274Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M301.475 55.2728H321.669V62.1633H309.269V67.8097H320.216V74.7002H309.269V80.538H322.165V87.4285H301.486L301.475 55.2728Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+								<path d="M326.918 87.4179V55.2729H334.701V75.2532L349.782 55.2729H356.596V87.4285H348.813V67.4376L333.732 87.4179H326.918ZM339.566 47C339.566 48.7439 340.445 49.2968 342.585 49.2968C344.432 49.2968 345.401 48.9778 345.401 47H352.699C352.8 51.4554 348.667 54.3477 342.585 54.3477C336.018 54.3477 332.268 51.4129 332.268 47H339.566Z" stroke="white" stroke-width="1.92202" stroke-miterlimit="10" />
+							</svg>
+						</div>
+						<div class="hero__text text text_xl wow animate__fadeInLeft" data-wow-delay=".1s">
+							<p>
+								Мы поможем вам решить вопросы приобретения, использования и защиты интеллектуальной
+								собственности. Наши юристы понимают, как работает именно ваш бизнес.
+							</p>
+
+							<p> Мы создаем эффективные стратегии юридического сопровождения проектов и всегда добиваемся
+								лучшего
+								результата. Мы сможем защитить даже самые дерзкие идеи.</p>
+						</div>
+						<div class="hero__action wow animate__fadeInLeft" data-wow-delay=".2s">
+							<button class="button button_second button_anim hero__btn" data-popup="#call">
+								<span class="button__text">Нужна консультация</span>
+								<span class="button__icon">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#arrow"></use>
+									</svg>
+								</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="section section_dec services-section">
+				<button class="section__arrow" type="button" data-goto-header data-goto=".services-section">
+					<svg>
+						<use xlink:href="img/icons/icons.svg#arrow"></use>
+					</svg>
+				</button>
+				<div class="container">
+					<div class="section__header">
+						<h2 class="section__title title">
+							<small class="title__small wow animate__fadeInUp">Наши <span>услуги</span></small>
+							<strong class="title__big wow animate__fadeInDown">стоимость</strong>
+						</h2>
+						<div class="section__text text text_xl">
+							Поможем вам с&nbsp;регистристрацией и&nbsp;защитой интеллектуальной собственности <br>
+							<span>сэкономив до&nbsp;30% бюджета.</span>
+						</div>
+					</div>
+					<div class="navigation-services-mobile">
+						<a href="" class="tabs__title">
+							<span class="tabs__title-icon icon-title">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#tov_znaki"></use>
+								</svg>
+							</span>
+							<span class="tabs__title-text">
+								Товарные знаки
+							</span>
+						</a>
+						<a href="" class="tabs__title">
+							<span class="tabs__title-icon icon-title">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#patent"></use>
+								</svg>
+							</span>
+							<span class="tabs__title-text">
+								Патенты
+							</span>
+						</a>
+						<a href="" class="tabs__title">
+							<span class="tabs__title-icon icon-title">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#sudi"></use>
+								</svg>
+							</span>
+							<span class="tabs__title-text">
+								Суды и споры
+							</span>
+						</a>
+						<a href="" class="tabs__title">
+							<span class="tabs__title-icon icon-title">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#e-comm"></use>
+								</svg>
+							</span>
+							<span class="tabs__title-text">
+								E-commerce
+							</span>
+						</a>
+						<a href="" class="tabs__title">
+							<span class="tabs__title-icon icon-title">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#dogovor"></use>
+								</svg>
+							</span>
+							<span class="tabs__title-text">
+								Договоры
+							</span>
+						</a>
+						<a href="" class="tabs__title">
+							<span class="tabs__title-icon icon-title">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#zachita"></use>
+								</svg>
+							</span>
+							<span class="tabs__title-text">
+								Защита IT технологий
+							</span>
+
+						</a>
+					</div>
+					<div class="tabs tabs_main" data-tabs data-tabs-animate>
+						<div class="tabs__navigation-wrapper">
+							<nav data-tabs-titles class="tabs__navigation">
+								<button type="button" class="tabs__title _tab-active">
+									<span class="tabs__title-icon icon-title">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#tov_znaki"></use>
+										</svg>
+									</span>
+									<span class="tabs__title-text">
+										Товарные знаки
+									</span>
+								</button>
+								<button type="button" class="tabs__title">
+									<span class="tabs__title-icon icon-title">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#patent"></use>
+										</svg>
+									</span>
+									<span class="tabs__title-text">
+										Патенты
+									</span>
+								</button>
+								<button type="button" class="tabs__title">
+									<span class="tabs__title-icon icon-title">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#sudi"></use>
+										</svg>
+									</span>
+									<span class="tabs__title-text">
+										Суды и споры
+									</span>
+								</button>
+								<button type="button" class="tabs__title">
+									<span class="tabs__title-icon icon-title">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#e-comm"></use>
+										</svg>
+									</span>
+									<span class="tabs__title-text">
+										E-commerce
+									</span>
+								</button>
+								<button type="button" class="tabs__title">
+									<span class="tabs__title-icon icon-title">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#dogovor"></use>
+										</svg>
+									</span>
+									<span class="tabs__title-text">
+										Договоры
+									</span>
+								</button>
+								<button type="button" class="tabs__title">
+									<span class="tabs__title-icon icon-title">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#zachita"></use>
+										</svg>
+									</span>
+									<span class="tabs__title-text">
+										Защита IT технологий
+									</span>
+
+								</button>
+							</nav>
+						</div>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body">
+								<div class="services-section-item">
+									<div class="services-section-item__top">
+										<div class="icon-title">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#tov_znaki"></use>
+											</svg>
+										</div>
+										<a href="" class="services-section-item__link text text_xl">
+											Все услуги
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="services-section-item__body">
+										<div class="services-section-item__title text-xxl">Товарные знаки</div>
+										<div class="services-section-item__price text">
+											от 35 000 ₽
+										</div>
+										<div class="services-section-item__text text">
+											Подберем для вас оптимальный тариф на регистрацию товарного знака.
+											Товарный знак (торговая или товарная марка) представляет собой обозначение,
+											предназначенное для индивидуализации товаров и услуг. Как предупредительная
+											маркировка используются значок ® и обозначения «trademark», «TM», «Registered
+											Trademark».
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="services-section-item">
+									<div class="services-section-item__top">
+										<div class="icon-title">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#patent"></use>
+											</svg>
+										</div>
+										<a href="" class="services-section-item__link text text_xl">
+											Все услуги
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="services-section-item__body">
+										<div class="services-section-item__title text-xxl">Патенты</div>
+										<div class="services-section-item__price text">
+											от 35 000 ₽
+										</div>
+										<div class="services-section-item__text text">
+											Подберем для вас оптимальный тариф на регистрацию товарного знака.
+											Товарный знак (торговая или товарная марка) представляет собой обозначение,
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="services-section-item">
+									<div class="services-section-item__top">
+										<div class="icon-title">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#sudi"></use>
+											</svg>
+										</div>
+										<a href="" class="services-section-item__link text text_xl">
+											Все услуги
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="services-section-item__body">
+										<div class="services-section-item__title text-xxl">Суды и споры</div>
+										<div class="services-section-item__price text">
+											от 35 000 ₽
+										</div>
+										<div class="services-section-item__text text">
+											Подберем для вас оптимальный тариф на регистрацию товарного знака.
+											Товарный знак (торговая или товарная марка) представляет собой обозначение,
+											предназначенное для индивидуализации товаров и услуг. Как предупредительная
+											маркировка используются значок ® и обозначения «trademark», «TM», «Registered
+											Trademark».
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="services-section-item">
+									<div class="services-section-item__top">
+										<div class="icon-title">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#e-comm"></use>
+											</svg>
+										</div>
+										<a href="" class="services-section-item__link text text_xl">
+											Все услуги
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="services-section-item__body">
+										<div class="services-section-item__title text-xxl">E-commerce</div>
+										<div class="services-section-item__price text">
+											от 35 000 ₽
+										</div>
+										<div class="services-section-item__text text">
+											Подберем для вас оптимальный тариф на регистрацию товарного знака.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="services-section-item">
+									<div class="services-section-item__top">
+										<div class="icon-title">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#dogovor"></use>
+											</svg>
+										</div>
+										<a href="" class="services-section-item__link text text_xl">
+											Все услуги
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="services-section-item__body">
+										<div class="services-section-item__title text-xxl"> Договоры</div>
+										<div class="services-section-item__price text">
+											от 35 000 ₽
+										</div>
+										<div class="services-section-item__text text">
+											Подберем для вас оптимальный тариф на регистрацию товарного знака.
+											Товарный знак (торговая или товарная марка) представляет собой обозначение,
+											предназначенное для индивидуализации товаров и услуг. Как предупредительная
+											маркировка используются значок ® и обозначения «trademark», «TM», «Registered
+											Trademark».
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__body">
+								<div class="services-section-item">
+									<div class="services-section-item__top">
+										<div class="icon-title">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#zachita"></use>
+											</svg>
+										</div>
+										<a href="" class="services-section-item__link text text_xl">
+											Все услуги
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow"></use>
+											</svg>
+										</a>
+									</div>
+									<div class="services-section-item__body">
+										<div class="services-section-item__title text-xxl">Защита IT технологий</div>
+										<div class="services-section-item__price text">
+											от 35 000 ₽
+										</div>
+										<div class="services-section-item__text text">
+											Подберем для вас оптимальный тариф на регистрацию товарного знака.
+											Товарный знак (торговая или товарная марка) представляет собой обозначение,
+											предназначенное для индивидуализации товаров и услуг. Как предупредительная
+											маркировка используются значок ® и обозначения «trademark», «TM», «Registered
+											Trademark».
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="interview section" style="background-image: url(img/main/interview-bg.webp)">
+				<div class="container">
+					<div class="section__header">
+						<h2 class="section__title title">
+							<small class="title__small wow animate__fadeInUp">О компании</small>
+							<strong class="title__big wow animate__fadeInDown">интервью</strong>
+						</h2>
+						<div class="section__text text text_xl">
+							Мы ― не просто патентное бюро, <span>а прогрессивная компания на&nbsp;стыке
+								юридической экспертизы и&nbsp;разработки IT-продуктов.</span>
+						</div>
+					</div>
+					<div class="interview__wrapper">
+						<div class="interview__top">
+							<div class="interview__info">
+								<div class="interview__title text-xxl">
+									Делаем все возможное
+								</div>
+								<div class="interview__text text text_xl">
+									<p class="color-accent">
+										Наша миссия развивать инновационные идеи наших клиентов, защищая их от&nbsp;юридических
+										рисков, и&nbsp;получать за это деньги.
+									</p>
+									<p>
+										Наши клиенты — это компании, работающие в&nbsp;сфере электронной коммерции,
+										маркетплейсы, стартап-проекты, IT-проекты, рекламные и&nbsp;маркетинг-агентства,
+										юридические
+										фирмы, IT-компании, онлайн-СМИ, творческие люди и&nbsp;изобретатели.
+									</p>
+								</div>
+								<div class="interview__actions btn-group">
+									<a href="" class="button btn-group__btn">
+										<span class="button__text">О компании</span>
+										<span class="button__icon">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow"></use>
+											</svg>
+										</span>
+									</a>
+									<a href="" class="button button_light btn-group__btn">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#doc"></use>
+										</svg>
+										<span>Смотреть презентацию</span>
+									</a>
+								</div>
+							</div>
+							<div class="interview__logo">
+								<img src="img/logo_m.svg" alt="Image" class="ibg">
+							</div>
+						</div>
+						<div class="interview__numbers numbers">
+							<div class="numbers__item">
+								<div class="numbers__top">
+									<strong data-animate-number="14">14 </strong>
+									<small>лет</small>
+								</div>
+								<div class="numbers__text text">
+									В интеллектуальной собственности,
+									мы знаем как и зачем
+								</div>
+							</div>
+							<div class="numbers__item">
+								<div class="numbers__top">
+									<strong data-animate-number="100">100 </strong>
+									<small>млн рублей</small>
+								</div>
+								<div class="numbers__text text">
+									Сэкономили нашим клиентам
+									за счет мировых согашений и взысканий компенсаций
+								</div>
+							</div>
+							<div class="numbers__item">
+								<div class="numbers__top">
+									<strong data-animate-number="98">98</strong>
+									<small>% успешных дел</small>
+								</div>
+								<div class="numbers__text text">
+									Мы нацелены на достижение
+									наилучшего результата
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="interview__video">
+						<div class="video-block">
+							<div class="video-block__value">
+								<div class="video-block__inner">
+									<div class="video-block__img">
+										<img src="img/main/video-bg.webp" alt="Image" class="ibg">
+									</div>
+
+									<button class="video-btn" type="button" data-video-src="https://obedinpartners.ru/wp-content/uploads/2021/11/Obedin-main-site.mp4">
+										<svg viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<rect x="1" y="1" width="49" height="49" rx="14" stroke="white" stroke-width="2" />
+											<path d="M21 18.8486C21 18.054 21.8821 17.5768 22.5473 18.0117L32.7199 24.663C33.3236 25.0577 33.3236 25.9423 32.7199 26.337L22.5472 32.9883C21.8821 33.4232 21 32.946 21 32.1514L21 18.8486Z" fill="#D9D9D9" />
+										</svg>
+
+									</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<section class="get-started section section_bottom">
+				<div class="container">
+					<div class="section__header">
+						<h2 class="section__title title">
+							<small class="title__small wow animate__fadeInUp">Обращайтесь <span>к&nbsp;профессионалам</span></small>
+							<strong class="title__big animate__fadeInDown">Начните работу</strong>
+						</h2>
+						<div class="section__text text text_xl">
+							Мы ― не просто патентное бюро, а&nbsp;прогрессивная компания на&nbsp;стыке
+							юридической экспертизы и&nbsp;разработки IT-продуктов.
+						</div>
+					</div>
+					<div class="get-started__form form">
+						<form action="#">
+							<div class="form__inner">
+								<div class="form__row">
+									<div class="form__column">
+										<div class="form__input">
+											<input class="input" autocomplete="off" type="text" placeholder="Ваше имя">
+										</div>
+									</div>
+									<div class="form__column">
+										<div class="form__input">
+											<input class="input" autocomplete="off" type="text" placeholder="Телефон">
+
+										</div>
+									</div>
+									<div class="form__column">
+										<button class="button button_anim form__button" type="submit">
+											<span class="button__text">Отправить</span>
+											<span class="button__icon">
+												<svg>
+													<use xlink:href="img/icons/icons.svg#arrow"></use>
+												</svg>
+											</span>
+										</button>
+									</div>
+								</div>
+								<div class="form__row">
+									<div class="form__column">
+										<div class="form__agree">
+											Нажимая кнопку "Отправить", вы соглашаетесь с<a href="">пользовательским
+												соглашением</a> и <a href="">политикой конфиденциальности</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="section teams section_dec">
+				<button class="section__arrow" data-goto-header data-goto=".teams">
+					<svg>
+						<use xlink:href="img/icons/icons.svg#arrow"></use>
+					</svg>
+				</button>
+				<div class="container">
+					<div class="section__header">
+						<h2 class="section__title title">
+							<small class="title__small wow animate__fadeInUp">Наша <span>команда</span></small>
+							<strong class="title__big wow animate__fadeInDown">Проффесионалы</strong>
+						</h2>
+						<div class="section__text text text_xl">
+							Поможет вам там, где другие отстают. В нашей компании - <span>юристы, судебные адвокаты, патентные поверенные,
+								IT-разработчики, LegalTech-эксперты, юристы-методологи</span>
+						</div>
+					</div>
+					<div class="teams__body swiper">
+						<div class="teams__wrapper swiper-wrapper">
+							<div class="teams__slide swiper-slide">
+								<div class="item-team">
+									<a href="" class="stretched-link"></a>
+									<div class="item-team__front">
+										<img class="ibg" src="img/main/team/01.webp" alt="Image">
+									</div>
+									<div class="item-team__back">
+										<div class="item-team__top">
+											<div class="item-team__icon">
+												<img src="img/main/team/01.webp" alt="Image" class="ibg">
+											</div>
+											<div class="item-team__name">
+												Обедина <br> Алина
+											</div>
+											<div class="item-team__text text">
+												Куратор проектов в&nbsp;компании «Обедин и Партнёры».
+											</div>
+										</div>
+										<div class="item-team__contacts">
+											<ul>
+												<li><a class="text" href="tel:+74994600013">+7 499 460 00-13</a>
+												</li>
+												<li><a class="text" href="mailto:obedina.a@obedinpartners.ru">obedina.a@obedinpartners.ru</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="teams__slide swiper-slide">
+								<div class="item-team">
+									<a href="" class="stretched-link"></a>
+									<div class="item-team__front">
+										<img class="ibg" src="img/main/team/02.webp" alt="Image">
+									</div>
+									<div class="item-team__back">
+										<div class="item-team__top">
+											<div class="item-team__icon">
+												<img src="img/main/team/02.webp" alt="Image" class="ibg">
+											</div>
+											<div class="item-team__name">
+												Обедина <br> Алина
+											</div>
+											<div class="item-team__text text">
+												Куратор проектов в&nbsp;компании «Обедин и Партнёры».
+											</div>
+										</div>
+										<div class="item-team__contacts">
+											<ul>
+												<li><a class="text" href="tel:+74994600013">+7 499 460 00-13</a>
+												</li>
+												<li><a class="text" href="mailto:obedina.a@obedinpartners.ru">obedina.a@obedinpartners.ru</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="teams__slide swiper-slide">
+								<div class="item-team">
+									<a href="" class="stretched-link"></a>
+									<div class="item-team__front">
+										<img class="ibg" src="img/main/team/03.webp" alt="Image">
+									</div>
+									<div class="item-team__back">
+										<div class="item-team__top">
+											<div class="item-team__icon">
+												<img src="img/main/team/03.webp" alt="Image" class="ibg">
+											</div>
+											<div class="item-team__name">
+												Обедина <br> Алина
+											</div>
+											<div class="item-team__text text">
+												Куратор проектов в&nbsp;компании «Обедин и Партнёры».
+											</div>
+										</div>
+										<div class="item-team__contacts">
+											<ul>
+												<li><a class="text" href="tel:+74994600013">+7 499 460 00-13</a>
+												</li>
+												<li><a class="text" href="mailto:obedina.a@obedinpartners.ru">obedina.a@obedinpartners.ru</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="teams__slide swiper-slide">
+								<div class="item-team">
+									<a href="" class="stretched-link"></a>
+									<div class="item-team__front">
+										<img class="ibg" src="img/main/team/04.webp" alt="Image">
+									</div>
+									<div class="item-team__back">
+										<div class="item-team__top">
+											<div class="item-team__icon">
+												<img src="img/main/team/04.webp" alt="Image" class="ibg">
+											</div>
+											<div class="item-team__name">
+												Обедина <br> Алина
+											</div>
+											<div class="item-team__text text">
+												Куратор проектов в&nbsp;компании «Обедин и Партнёры».
+											</div>
+										</div>
+										<div class="item-team__contacts">
+											<ul>
+												<li><a class="text" href="tel:+74994600013">+7 499 460 00-13</a>
+												</li>
+												<li><a class="text" href="mailto:obedina.a@obedinpartners.ru">obedina.a@obedinpartners.ru</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="teams__slide swiper-slide">
+								<div class="item-team">
+									<a href="" class="stretched-link"></a>
+									<div class="item-team__front">
+										<img class="ibg" src="img/main/team/01.webp" alt="Image">
+									</div>
+									<div class="item-team__back">
+										<div class="item-team__top">
+											<div class="item-team__icon">
+												<img src="img/main/team/01.webp" alt="Image" class="ibg">
+											</div>
+											<div class="item-team__name">
+												Обедина <br> Алина
+											</div>
+											<div class="item-team__text text">
+												Куратор проектов в&nbsp;компании «Обедин и Партнёры».
+											</div>
+										</div>
+										<div class="item-team__contacts">
+											<ul>
+												<li><a class="text" href="tel:+74994600013">+7 499 460 00-13</a>
+												</li>
+												<li><a class="text" href="mailto:obedina.a@obedinpartners.ru">obedina.a@obedinpartners.ru</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="teams__slide swiper-slide">
+								<div class="item-team">
+									<a href="" class="stretched-link"></a>
+									<div class="item-team__front">
+										<img class="ibg" src="img/main/team/02.webp" alt="Image">
+									</div>
+									<div class="item-team__back">
+										<div class="item-team__top">
+											<div class="item-team__icon">
+												<img src="img/main/team/02.webp" alt="Image" class="ibg">
+											</div>
+											<div class="item-team__name">
+												Обедина <br> Алина
+											</div>
+											<div class="item-team__text text">
+												Куратор проектов в&nbsp;компании «Обедин и Партнёры».
+											</div>
+										</div>
+										<div class="item-team__contacts">
+											<ul>
+												<li><a class="text" href="tel:+74994600013">+7 499 460 00-13</a>
+												</li>
+												<li><a class="text" href="mailto:obedina.a@obedinpartners.ru">obedina.a@obedinpartners.ru</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="teams__slide swiper-slide">
+								<div class="item-team">
+									<a href="" class="stretched-link"></a>
+									<div class="item-team__front">
+										<img class="ibg" src="img/main/team/03.webp" alt="Image">
+									</div>
+									<div class="item-team__back">
+										<div class="item-team__top">
+											<div class="item-team__icon">
+												<img src="img/main/team/03.webp" alt="Image" class="ibg">
+											</div>
+											<div class="item-team__name">
+												Обедина <br> Алина
+											</div>
+											<div class="item-team__text text">
+												Куратор проектов в&nbsp;компании «Обедин и Партнёры».
+											</div>
+										</div>
+										<div class="item-team__contacts">
+											<ul>
+												<li><a class="text" href="tel:+74994600013">+7 499 460 00-13</a>
+												</li>
+												<li><a class="text" href="mailto:obedina.a@obedinpartners.ru">obedina.a@obedinpartners.ru</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="teams__slide swiper-slide">
+								<div class="item-team">
+									<a href="" class="stretched-link"></a>
+									<div class="item-team__front">
+										<img class="ibg" src="img/main/team/04.webp" alt="Image">
+									</div>
+									<div class="item-team__back">
+										<div class="item-team__top">
+											<div class="item-team__icon">
+												<img src="img/main/team/04.webp" alt="Image" class="ibg">
+											</div>
+											<div class="item-team__name">
+												Обедина <br> Алина
+											</div>
+											<div class="item-team__text text">
+												Куратор проектов в&nbsp;компании «Обедин и Партнёры».
+											</div>
+										</div>
+										<div class="item-team__contacts">
+											<ul>
+												<li><a class="text" href="tel:+74994600013">+7 499 460 00-13</a>
+												</li>
+												<li><a class="text" href="mailto:obedina.a@obedinpartners.ru">obedina.a@obedinpartners.ru</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="swiper-scrollbar"></div>
+					</div>
+				</div>
+			</section>
+			<section class="section section_bottom principles">
+				<div class="container">
+					<div class="section__header">
+						<h2 class="section__title title">
+							<small class="title__small wow animate__fadeInUp">Принципы <span>нашей работы</span></small>
+							<strong class="title__big wow animate__fadeInDown">Принципы</strong>
+						</h2>
+						<div class="section__text text text_xl">
+							Поможем вам с регистристрацией и&nbsp;защитой интеллектуальной собственности
+							<span>сэкономив до 30% бюджета.</span>
+						</div>
+					</div>
+					<div class="principles">
+						<div data-spollers data-one-spoller class="principles__info principles-info">
+							<details class="principles-info__item" data-open>
+								<summary class="principles-info__title">
+									<span class="icon-title">01</span>
+									<span>Фиксированная стоимость</span>
+								</summary>
+								<div class="principles-info__body text">У нас прозрачная система выполнения услуг. Мы
+									работаем
+									без
+									доплат и
+									скрытых платежей. Цена обсуждается и согласовывается в начале сотрудничества и
+									остается
+									неизменной независимо от усилий и ресурсов, потраченных на проект.
+								</div>
+							</details>
+							<details class="principles-info__item">
+								<summary class="principles-info__title">
+									<span class="icon-title">02</span>
+									<span>Ответственность в&nbsp;работе</span>
+								</summary>
+								<div class="principles-info__body text">У нас прозрачная система выполнения услуг. Мы
+									работаем
+									без
+									доплат и
+									скрытых платежей. Цена обсуждается и согласовывается в начале сотрудничества и
+									остается
+									неизменной независимо от усилий и ресурсов, потраченных на проект.
+								</div>
+							</details>
+							<details class="principles-info__item">
+								<summary class="principles-info__title">
+									<span class="icon-title">03</span>
+									<span>Профессионализм сотрудников</span>
+								</summary>
+								<div class="principles-info__body text">У нас прозрачная система выполнения услуг. Мы
+									работаем
+									без
+									доплат и
+									скрытых платежей. Цена обсуждается и согласовывается в начале сотрудничества и
+									остается
+									неизменной независимо от усилий и ресурсов, потраченных на проект.
+								</div>
+							</details>
+						</div>
+						<div class="principles__img">
+							<img src="img/main/principles/01.webp" alt="Image" class="ibg">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="partners section section_dark">
+				<button class="section__arrow" data-goto-header data-goto=".partners">
+					<svg>
+						<use xlink:href="img/icons/icons.svg#arrow"></use>
+					</svg>
+				</button>
+				<div class="container">
+					<div class="section__header">
+						<h2 class="section__title title">
+							<small class="title__small wow animate__fadeInUp">Наши <span>клиенты</span></small>
+							<strong class="title__big wow animate__fadeInDown">нам доверяют</strong>
+						</h2>
+						<div class="section__text text text_xl">
+							<span>Мы работаем максимально прозрачно</span>, так как наш рост напрямую зависит
+							от роста наших клиентов
+						</div>
+					</div>
+					<div class="partners__body swiper">
+						<div class="partners__wrapper swiper-wrapper">
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/01.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										<span> сделали 3 проекта</span>
+										<span> 8&nbsp;лет вместе</span>
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/02.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										<span> сделали 7 проектов</span>
+										<span>4&nbsp;года вместе</span>
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/03.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										<span>сделали 5 проектов</span>
+										<span>8&nbsp;лет вместе</span>
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/04.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										<span> NDA </span>
+										<span> 1 год вместе</span>
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/05.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										<span>сделали 1 проект</span>
+										<span>3&nbsp;года вместе</span>
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/06.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										<span>сделали 3 проекта</span>
+										<span> 8&nbsp;лет вместе</span>
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/06.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										<span>сделали 3 проекта</span>
+										<span> 8&nbsp;лет вместе</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Если нужен скролбар -->
+						<div class="swiper-scrollbar"></div>
+					</div>
+					<div class="partners__review">
+						<div class="review">
+							<div class="review__top">
+								<div class="review__title">Отзывы</div>
+								<a href="" class="review__link">
+									<span>Все отзывы</span>
+									<svg>
+										<use xlink:href="img/icons/icons.svg#arrow"></use>
+									</svg>
+								</a>
+							</div>
+							<div class="review__body text">
+								<p>
+									Выражаем благодарность кампании ООО «Лайкит» за работу по разработке и поддержке наших
+									сайтов: hankook-warranty.ru/laufenn-warranty.ru
+								</p>
+								<p>
+									В процессе сотрудничества компания ООО «Лайкит» зарекомендовала себя как надежный и
+									порядочный партнер, готовый к открытому Многоплановому и долговременному сотрудничеству.
+									Сотрудники ООО «Лайкит» показали себя как специалисты, способные решать нестандартные
+									задачи. Дизайнерские решения, использованные в работе, были исполнены на высоком уровне,
+									внедрена качественная программная разработка, которая весьма ощутимо повысила скорость
+									реализации изменений на сайте.
+								</p>
+								<p>
+									Все работы были выполнены качественно и в срок. В результате взаимного сотрудничества
+									наша компания получила соответствующий всем требованиям и по дизайну, и по
+									функциональности Интернет-ресурс.
+								</p>
+							</div>
+							<div class="review__footer">
+								<div class="review__user user-review">
+									<div class="user-review__info">
+										<img src="img/main/avatars/01.webp" alt="Image" class="user-review__icon">
+										<div class="user-review__year">2024 год</div>
+										<div class="user-review__category">
+											<p>Юн Сынг Хван ,</p>
+											<p>Генеральный директор 000 «Ханкук Тайр Рус»</p>
+										</div>
+									</div>
+									<a href="" class="button button_second user-review__btn">
+										<span class="button__text">Смотреть отзыв</span>
+										<span class="button__icon">
+											<svg>
+												<use xlink:href="img/icons/icons.svg#arrow"></use>
+											</svg>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="blog section section_bottom" style="background-image: url(img/main/blog-bg.webp);">
+				<div class="container">
+					<div class="section__header">
+						<h2 class="section__title title">
+							<small class="title__small wow animate__fadeInUp">Блог о <span>нашей работе</span></small>
+							<strong class="title__big wow animate__fadeInDown">Новости</strong>
+						</h2>
+						<div class="section__text text text_xl">
+							Поможем вам с&nbsp;регистристрацией и&nbsp;защитой интеллектуальной собственности
+							<span>сэкономив до 30% бюджета.</span>
+						</div>
+					</div>
+					<div class="blog__wrapper">
+						<a href="" class="blog__main main-blog" style="background-image: url(img/main/main-blog-img.webp);">
+							<div class="main-blog__content">
+								<div class="main-blog__subtitle text text_xl">Блог</div>
+								<div class="main-blog__title">Сравнение международной и национальной регистрации товарных
+									знаков
+								</div>
+								<div class="main-blog__text text text_xl">Товарный знак действует на территории той страны,
+									где
+									он зарегистрирован. Когда коммерческая деятельность выходит за рамки одного государства,
+									владельцу бизнеса необходимо позаботиться о защите своего знака за рубежом.
+								</div>
+							</div>
+						</a>
+						<div class="blog__items">
+							<div class="item-blog">
+								<time>Новости 18 марта 2025</time>
+								<a href="" class="item-blog__title">Мадридская система регистрации товарных знаков:
+									особенности процедуры и сроки</a>
+							</div>
+							<div class="item-blog">
+								<time>Новости 18 марта 2025</time>
+								<a href="" class="item-blog__title">Мадридская система регистрации товарных знаков:
+									особенности процедуры и сроки</a>
+							</div>
+							<div class="item-blog">
+								<time>Новости 18 марта 2025</time>
+								<a href="" class="item-blog__title">Мадридская система регистрации товарных знаков:
+									особенности процедуры и сроки</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="contacts-section section section_dec">
+				<button class="section__arrow" type="button" data-goto-header data-goto=".contacts-section">
+					<svg>
+						<use xlink:href="img/icons/icons.svg#arrow"></use>
+					</svg>
+				</button>
+				<div class="contacts-section__container">
+					<div class="section__header">
+						<h2 class="section__title title">
+							<small class="title__small wow animate__fadeInUp">Свяжитесь с&nbsp;нами для&nbsp;получения
+								бесплатной консультации</small>
+							<strong class="title__big wow animate__fadeInDown">КОНТАКТЫ</strong>
+						</h2>
+					</div>
+					<div class="contacts-section__form">
+						<form action="#">
+							<div class="form__inner">
+								<div class="form__row">
+									<div class="form__column">
+										<div class="form__input">
+											<input class="input" autocomplete="off" type="text" placeholder="Ваше имя">
+										</div>
+									</div>
+									<div class="form__column">
+										<div class="form__input">
+											<input class="input" autocomplete="off" type="text" placeholder="Телефон">
+
+										</div>
+									</div>
+									<div class="form__column">
+										<div class="form__input">
+											<input class="input" autocomplete="off" type="text" placeholder="Комментарий">
+
+										</div>
+									</div>
+									<div class="form__column">
+										<button class="button button_anim form__button" type="submit">
+											<span class="button__text">Отправить</span>
+											<span class="button__icon">
+												<svg>
+													<use xlink:href="img/icons/icons.svg#arrow"></use>
+												</svg>
+											</span>
+										</button>
+									</div>
+								</div>
+								<div class="form__row">
+									<div class="form__column">
+										<div class="form__agree">
+											Нажимая кнопку "Отправить", вы соглашаетесь с<a href="">пользовательским
+												соглашением</a> и <a href="">политикой конфиденциальности</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__top top-footer">
+					<div class="top-footer__about">
+						<a href="/" class="footer__logo logo">
+							<picture>
+								<source media="(min-width: 480px)" srcset="img/logo.webp">
+								<img class="logo__img" src="img/logo_m.svg" alt="Logo">
+							</picture>
+						</a>
+						<div class="footer__social">
+							<a href="" class="social-item">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#tg"></use>
+								</svg>
+							</a>
+							<a href="" class="social-item">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#vk"></use>
+								</svg>
+							</a>
+							<a href="" class="social-item">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#youtube"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="footer__text">
+							<p>© 2011—2025 «Обедин и Партнеры»</p>
+							<p>ИНН: 9704062264</p>
+							<p> ОГРН: 1217700196560</p>
+						</div>
+					</div>
+					<div class="top-footer__navigation">
+						<div class="top-footer__col-contacts">
+							<div class="footer__contacts">
+								<small>Время работы с 9:00 до 18:00 по Москве</small>
+								<a class="footer__link" href="mailto:info@obedinpartners.ru">info@obedinpartners.ru</a>
+							</div>
+							<div class="footer__contacts">
+								<small>г.Москва, ул.Жуковского, д.11</small>
+								<a class="footer__link" href="tel:+74994600013">+7 499 460 00 13</a>
+							</div>
+						</div>
+						<div class="top-footer__col-menu">
+							<div class="footer__menu menu-footer">
+								<ul>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Услуги</a></li>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Торговые знаки</a></li>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Патенты</a></li>
+								</ul>
+							</div>
+							<div class="footer__menu menu-footer">
+								<ul>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Суды и споры</a></li>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">E-commerce</a></li>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Договоры</a></li>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Защита IT технологий</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="footer__slider footer-slider">
+					<div class="footer-slider__body swiper">
+						<div class="footer-slider__wrapper swiper-wrapper">
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Проверка <br> на&nbsp;уникальность</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Разработка <br> товарного знака</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Проверка <br> на&nbsp;патентную чистоту</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Ускорение <br> патентной экспертизы</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Патентование <br> дизайна в&nbsp;Евразии</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Проверка <br> на&nbsp;уникальность</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Разработка <br> товарного знака</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Проверка <br> на&nbsp;патентную чистоту</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Ускорение <br> патентной экспертизы</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Патентование <br> дизайна в&nbsp;Евразии</a>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-controls">
+						<button type="button" class="swiper-button swiper-button-prev">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#arrow"></use>
+							</svg>
+						</button>
+						<button type="button" class="swiper-button swiper-button-next">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#arrow"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="footer__copy">
+					<p>Юридическая компания “Обедин и Партнеры”</p>
+					<p>Мы поможем вам решить вопросы приобретения, использования и
+						защиты интеллектуальной собственности. Мы сможем защитить даже самые дерзкие идеи.</p>
+				</div>
+			</div>
+		</footer>
+
+		<!--Активация попап  -->
+		<!-- Используем метод flsModules.popup.open('#thanks'); Посмотри последний скрипт в перечне скриптов на странице-->
+
+		<div id="thanks" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14.1027 11.8392L11.8635 14.0784L7.33802 9.55288L2.78897 14.1019L0.549798 11.8628L5.09885 7.31371L0.549798 2.76465L2.78897 0.525483L7.33802 5.07454L11.8635 0.549054L14.1027 2.78823L9.5772 7.31371L14.1027 11.8392Z" fill="#173867" />
+						</svg>
+					</button>
+					<div class="popup__form">
+						<div class="popup__title title-page title-page_h2"><span>Спасибо!</span></div>
+						<div class="popup__text text">Ваше сообщение отправлено. Мы свяжемся с&nbsp;Вами в&nbsp;ближайшее время!</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/common.js?_v=1.0.0"></script>
+	<script src="js/swiper.js?_v=1.0.0"></script>
+	<script src="js/video-block.js?_v=1.0.0"></script>
+	<script src="js/spoilers.js?_v=1.0.0"></script>
+	<script src="js/tabs.js?_v=1.0.0"></script>
+	<script src="js/popup.js?_v=1.0.0"></script>
+	<script src="js/home.js?_v=1.0.0"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			flsModules.popup.open('#thanks');
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Отзывы</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/common.css?_v=1.0.3">
+	<link rel="stylesheet" href="css/swiper.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/header.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/footer.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/breadcrumbs.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/tabs.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/seo.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/show-more.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/partners.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/review.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/popup.css?_v=1.0.0">
+	<link rel="stylesheet" href="css/reviews-page.css?_v=1.0.0">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--	 <style>body{opacity: 0;}</style>-->
+	<style>
+		/* Начальное состояние */
+		body {
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+
+		/* Класс, добавляемый после загрузки */
+		html.loaded body {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container  animate__fadeIn">
+				<a href="/" class="header__logo animate__fadeInUp logo">
+					<picture>
+						<source media="(min-width: 480px)" srcset="img/logo.webp">
+						<img class="logo__img logo__img_dark" src="img/logo_m.svg" alt="Logo">
+					</picture>
+					<picture>
+						<source media="(min-width: 480px)" srcset="img/logo_w.webp">
+						<img class="logo__img logo__img_white" src="img/logo_w-m.svg" alt="Logo">
+					</picture>
+				</a>
+				<div class="header__actions">
+					<div class="header__menu menu">
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item animate__fadeInUp"><a href="#" class="menu__link menu__link_icon has-submenu">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#burger"></use>
+										</svg>
+										<span>Услуги</span></a>
+									<div class="submenu">
+										<div class="submenu__container">
+											<div class="submenu__tabs tabs" data-tabs>
+												<nav data-tabs-titles class="tabs__navigation">
+													<button type="button" class="tabs__title _tab-active">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#tov_znaki"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															Товарные знаки
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#patent"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															Патенты
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#sudi"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															Суды и споры
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#e-comm"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															E-commerce
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#dogovor"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															Договоры
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title">
+															<svg>
+																<use xlink:href="img/icons/icons.svg#zachita"></use>
+															</svg>
+														</span>
+														<span class="tabs__title-text">
+															Защита IT технологий
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+												</nav>
+												<div data-tabs-body class="tabs__content">
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		товарные знаки
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Регистрация ТЗ в России
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Ускоренная регистрация ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Ответ на уведомление или отказ в регистрации ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Проверка на уникальность
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Международная регистрация ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Разработка логотипа и нейминга
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Возражение против регистрации товарного знака по заявке
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		Патенты
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Патентование изобретений
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Полезные модели
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Промышленные образцы
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Международное патентование
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Возражение против регистрации товарного знака по заявке
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		Суды и споры
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Аннулирование товарного знака
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Борьба с параллельным импортом
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Оспаривание решения Роспатента
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Борьба с контрафактом
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Защита товарного знака в суде
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		E-commerce
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Аннулирование товарного знака
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Борьба с параллельным импортом
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Оспаривание решения Роспатента
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Борьба с контрафактом
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Защита товарного знака в суде
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		Договоры
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Регистрация ТЗ в России
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Ускоренная регистрация ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Ответ на уведомление или отказ в регистрации ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Проверка на уникальность
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Международная регистрация ТЗ
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Разработка логотипа и нейминга
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Возражение против регистрации товарного знака по заявке
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="submenu-list">
+															<ul class="submenu-list__primary">
+																<li>
+																	<button class="btn-back" type="button">
+																		Защита IT технологий
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</button>
+																</li>
+																<li>
+																	<a href="">
+																		Патентование изобретений
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Полезные модели
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Промышленные образцы
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+																<li>
+																	<a href="">
+																		Международное патентование
+																	</a>
+																	Возражение против регистрации товарного знака по заявке
+
+																</li>
+															</ul>
+															<ul class="submenu-list__secondary">
+																<li><a href="">
+																		Возражение против регистрации товарного знака по заявке
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация НМПТ/ГУ
+
+																	</a></li>
+																<li><a href="">
+																		Продление срока действия ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Внесение изменений в ТЗ
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация Коллективного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Регистрация общеизвестного товарного знака
+
+																	</a></li>
+																<li><a href="">
+																		Внесение ТЗ в ТРОИС
+
+																	</a></li>
+																<li><a href="">
+																		Получение согласия на регистрацию товарного знака
+
+																	</a></li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="menu__item  animate__fadeInUp"><a href="#" class="menu__link has-submenu">
+										О нас
+									</a>
+									<div class="submenu">
+										<div class="submenu__container">
+											<div class="submenu__tabs tabs" data-tabs>
+												<nav data-tabs-titles class="tabs__navigation">
+													<button type="button" class="tabs__title _tab-active">
+														<span class="tabs__title-icon icon-title icon-title_num">01</span>
+														<span class="tabs__title-text">
+															О компании
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title icon-title_num">02</span>
+														<span class="tabs__title-text">
+															Команда
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title icon-title_num">03</span>
+														<span class="tabs__title-text">
+															Наши клиенты
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title icon-title_num">04</span>
+														<span class="tabs__title-text">
+															Отзывы
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+													<button type="button" class="tabs__title">
+														<span class="tabs__title-icon icon-title icon-title_num">05</span>
+														<span class="tabs__title-text">
+															Партнерство
+														</span>
+														<svg class="tabs__title-arrow">
+															<use xlink:href="img/icons/icons.svg#arrow-sl"></use>
+														</svg>
+													</button>
+												</nav>
+												<div data-tabs-body class="tabs__content">
+													<div class="tabs__body">
+														<div class="about-menu-content">
+															<button class="btn-back" type="button">
+																О нас
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#arrow"></use>
+																</svg>
+															</button>
+															<div class="about-menu-content__title text-xxl">
+																О нас
+															</div>
+															<div class="about-menu-content__text text">
+																<p>
+																	Институт интеллектуальной собственности не очень сильно
+																	развивался. Ведь в Советском Союзе понятия коммерции не
+																	было.
+																	Это потом сложилось более-менее логичное и
+																	понятное законодательство. Были отдельные законы: об
+																	авторских
+																	правах, о товарных знаках, о патентах, которые впоследствии
+																	легли в основу четвёртой части Гражданского кодекса —
+																	«библии»
+																	юриста по защите интеллектуальных прав.
+																</p>
+
+																<p> Когда в 2002-м я поступал, то я уже понимал, что к тому
+																	моменту,
+																	когда я закончу вуз, это будет востребованная специализация.
+																	Это
+																	будет очень интересное дело, и оно будет связано, в том
+																	числе, и
+																	с творчеством.</p>
+															</div>
+															<div class="about-menu-content__actions">
+																<a href="" class="button about-menu-content__btn">
+																	<span class="button__text">О компании</span>
+																	<span class="button__icon">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</span>
+																</a>
+																<a href="" class="button button_light about-menu-content__btn">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#doc"></use>
+																	</svg>
+																	<span>Смотреть презентацию</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="about-menu-content">
+															<button class="btn-back" type="button">
+																Команда
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#arrow"></use>
+																</svg>
+															</button>
+															<div class="about-menu-content__title text-xxl">
+																Команда
+															</div>
+															<div class="about-menu-content__text text">
+																<p>
+																	Институт интеллектуальной собственности не очень сильно
+																	развивался. Ведь в Советском Союзе понятия коммерции не
+																	было.
+																	Это потом сложилось более-менее логичное и
+																	понятное законодательство. Были отдельные законы: об
+																	авторских
+																	правах, о товарных знаках, о патентах, которые впоследствии
+																	легли в основу четвёртой части Гражданского кодекса —
+																	«библии»
+																	юриста по защите интеллектуальных прав.
+																</p>
+
+																<p> Когда в 2002-м я поступал, то я уже понимал, что к тому
+																	моменту,
+																	когда я закончу вуз, это будет востребованная специализация.
+																	Это
+																	будет очень интересное дело, и оно будет связано, в том
+																	числе, и
+																	с творчеством.</p>
+															</div>
+															<div class="about-menu-content__actions">
+																<a href="" class="button about-menu-content__btn">
+																	<span class="button__text">Команда</span>
+																	<span class="button__icon">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</span>
+																</a>
+																<a href="" class="button button_light about-menu-content__btn">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#doc"></use>
+																	</svg>
+																	<span>Смотреть презентацию</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="about-menu-content">
+															<button class="btn-back" type="button">
+																Наши клиенты
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#arrow"></use>
+																</svg>
+															</button>
+															<div class="about-menu-content__title text-xxl">
+																Наши клиенты
+															</div>
+															<div class="about-menu-content__text text">
+																<p>
+																	Институт интеллектуальной собственности не очень сильно
+																	развивался. Ведь в Советском Союзе понятия коммерции не
+																	было.
+																	Это потом сложилось более-менее логичное и
+																	понятное законодательство. Были отдельные законы: об
+																	авторских
+																	правах, о товарных знаках, о патентах, которые впоследствии
+																	легли в основу четвёртой части Гражданского кодекса —
+																	«библии»
+																	юриста по защите интеллектуальных прав.
+																</p>
+
+																<p> Когда в 2002-м я поступал, то я уже понимал, что к тому
+																	моменту,
+																	когда я закончу вуз, это будет востребованная специализация.
+																	Это
+																	будет очень интересное дело, и оно будет связано, в том
+																	числе, и
+																	с творчеством.</p>
+															</div>
+															<div class="about-menu-content__actions">
+																<a href="" class="button about-menu-content__btn">
+																	<span class="button__text">Наши клиенты</span>
+																	<span class="button__icon">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</span>
+																</a>
+																<a href="" class="button button_light about-menu-content__btn">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#doc"></use>
+																	</svg>
+																	<span>Смотреть презентацию</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="about-menu-content">
+															<button class="btn-back" type="button">
+																Отзывы
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#arrow"></use>
+																</svg>
+															</button>
+															<div class="about-menu-content__title text-xxl">
+																Отзывы
+															</div>
+															<div class="about-menu-content__text text">
+																<p>
+																	Институт интеллектуальной собственности не очень сильно
+																	развивался. Ведь в Советском Союзе понятия коммерции не
+																	было.
+																	Это потом сложилось более-менее логичное и
+																	понятное законодательство. Были отдельные законы: об
+																	авторских
+																	правах, о товарных знаках, о патентах, которые впоследствии
+																	легли в основу четвёртой части Гражданского кодекса —
+																	«библии»
+																	юриста по защите интеллектуальных прав.
+																</p>
+
+																<p> Когда в 2002-м я поступал, то я уже понимал, что к тому
+																	моменту,
+																	когда я закончу вуз, это будет востребованная специализация.
+																	Это
+																	будет очень интересное дело, и оно будет связано, в том
+																	числе, и
+																	с творчеством.</p>
+															</div>
+															<div class="about-menu-content__actions">
+																<a href="" class="button about-menu-content__btn">
+																	<span class="button__text">Отзывы</span>
+																	<span class="button__icon">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</span>
+																</a>
+																<a href="" class="button button_light about-menu-content__btn">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#doc"></use>
+																	</svg>
+																	<span>Смотреть презентацию</span>
+																</a>
+															</div>
+														</div>
+													</div>
+													<div class="tabs__body">
+														<div class="about-menu-content">
+															<button class="btn-back" type="button">
+																Партнерство
+																<svg>
+																	<use xlink:href="img/icons/icons.svg#arrow"></use>
+																</svg>
+															</button>
+															<div class="about-menu-content__title text-xxl">
+																Партнерство
+															</div>
+															<div class="about-menu-content__text text">
+																<p>
+																	Институт интеллектуальной собственности не очень сильно
+																	развивался. Ведь в Советском Союзе понятия коммерции не
+																	было.
+																	Это потом сложилось более-менее логичное и
+																	понятное законодательство. Были отдельные законы: об
+																	авторских
+																	правах, о товарных знаках, о патентах, которые впоследствии
+																	легли в основу четвёртой части Гражданского кодекса —
+																	«библии»
+																	юриста по защите интеллектуальных прав.
+																</p>
+
+																<p> Когда в 2002-м я поступал, то я уже понимал, что к тому
+																	моменту,
+																	когда я закончу вуз, это будет востребованная специализация.
+																	Это
+																	будет очень интересное дело, и оно будет связано, в том
+																	числе, и
+																	с творчеством.</p>
+															</div>
+															<div class="about-menu-content__actions">
+																<a href="" class="button about-menu-content__btn">
+																	<span class="button__text">Партнерство</span>
+																	<span class="button__icon">
+																		<svg>
+																			<use xlink:href="img/icons/icons.svg#arrow"></use>
+																		</svg>
+																	</span>
+																</a>
+																<a href="" class="button button_light about-menu-content__btn">
+																	<svg>
+																		<use xlink:href="img/icons/icons.svg#doc"></use>
+																	</svg>
+																	<span>Смотреть презентацию</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="menu__item animate__fadeInUp"><a href="#" class="menu__link">Блог</a></li>
+								<li class="menu__item  animate__fadeInUp"><a href="#" class="menu__link">Кейсы</a></li>
+								<li class="menu__item  animate__fadeInUp"><a href="#" class="menu__link">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__contacts  animate__fadeInUp">
+						<a class="header__tel" href="tel:+74994600013">+7 499 460 00 13</a>
+						<a class="header__message" href="">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#tg"></use>
+							</svg>
+						</a>
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="page">
+			<nav class="breadcrumbs">
+				<div class="container">
+					<ul class="breadcrumbs__list">
+						<li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+						<li class="breadcrumbs__item"><span class="breadcrumbs__current">Отзывы</span></li>
+					</ul>
+				</div>
+			</nav>
+			<section class="section section_no-bottom inner-page inner-page_dec">
+				<div class="container">
+					<div class="inner-page__top">
+						<h1 class="inner-page__title title-page">Отзывы</h1>
+						<div class="inner-page__text text">
+							Мы ценим и&nbsp;гордимся сотрудничеством с&nbsp;каждым из более 11&nbsp;000 наших клиентов. Ниже
+							приведены лишь
+							некоторые из них.
+						</div>
+						<div class="btn-group">
+							<button class="button btn-group__btn button_anim" type="button">
+								<span class="button__text">Получить консультацию</span>
+								<span class="button__icon">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#arrow"></use>
+									</svg>
+								</span>
+							</button>
+							<button class="button button_light btn-group__btn" type="button" data-goto-header data-goto=".partners">
+								<span>Наши клиенты</span>
+							</button>
+						</div>
+					</div>
+					<div class="reviews-items section section_bottom">
+						<div class="reviews-items__item">
+							<div class="review">
+								<div class="review__top">
+									<div class="review__title">Название компаниии</div>
+								</div>
+								<div class="review__body text">
+									<p>
+										Выражаем благодарность кампании ООО «Лайкит» за работу по разработке и поддержке
+										наших
+										сайтов: hankook-warranty.ru/laufenn-warranty.ru
+									</p>
+									<p>
+										В процессе сотрудничества компания ООО «Лайкит» зарекомендовала себя как надежный и
+										порядочный партнер, готовый к открытому Многоплановому и долговременному
+										сотрудничеству.
+										Сотрудники ООО «Лайкит» показали себя как специалисты, способные решать
+										нестандартные
+										задачи. Дизайнерские решения, использованные в работе, были исполнены на высоком
+										уровне,
+										внедрена качественная программная разработка, которая весьма ощутимо повысила
+										скорость
+										реализации изменений на сайте.
+									</p>
+									<p>
+										Все работы были выполнены качественно и в срок. В результате взаимного
+										сотрудничества
+										наша компания получила соответствующий всем требованиям и по дизайну, и по
+										функциональности Интернет-ресурс.
+									</p>
+								</div>
+								<div class="review__footer">
+									<div class="review__user user-review">
+										<div class="user-review__info">
+											<img src="img/main/avatars/01.webp" alt="Image" class="user-review__icon">
+											<div class="user-review__year">2024 год</div>
+											<div class="user-review__category">
+												<p>Юн Сынг Хван ,</p>
+												<p>Генеральный директор 000 «Ханкук Тайр Рус»</p>
+											</div>
+										</div>
+										<button class="button button_second user-review__btn" data-popup="#review-img">
+											<span class="button__text">Смотреть отзыв</span>
+											<span class="button__icon">
+												<svg>
+													<use xlink:href="img/icons/icons.svg#arrow"></use>
+												</svg>
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="reviews-items__item">
+							<div class="review">
+								<div class="review__top">
+									<div class="review__title">Название компаниии</div>
+								</div>
+								<div class="review__body text">
+									<p>
+										Выражаем благодарность кампании ООО «Лайкит» за работу по разработке и поддержке
+										наших
+										сайтов: hankook-warranty.ru/laufenn-warranty.ru
+									</p>
+									<p>
+										В процессе сотрудничества компания ООО «Лайкит» зарекомендовала себя как надежный и
+										порядочный партнер, готовый к открытому Многоплановому и долговременному
+										сотрудничеству.
+										Сотрудники ООО «Лайкит» показали себя как специалисты, способные решать
+										нестандартные
+										задачи. Дизайнерские решения, использованные в работе, были исполнены на высоком
+										уровне,
+										внедрена качественная программная разработка, которая весьма ощутимо повысила
+										скорость
+										реализации изменений на сайте.
+									</p>
+									<p>
+										Все работы были выполнены качественно и в срок. В результате взаимного
+										сотрудничества
+										наша компания получила соответствующий всем требованиям и по дизайну, и по
+										функциональности Интернет-ресурс.
+									</p>
+								</div>
+								<div class="review__footer">
+									<div class="review__user user-review">
+										<div class="user-review__info">
+											<img src="img/main/avatars/01.webp" alt="Image" class="user-review__icon">
+											<div class="user-review__year">2024 год</div>
+											<div class="user-review__category">
+												<p>Юн Сынг Хван ,</p>
+												<p>Генеральный директор 000 «Ханкук Тайр Рус»</p>
+											</div>
+										</div>
+										<a href="" class="button button_second user-review__btn">
+											<span class="button__text">Смотреть отзыв</span>
+											<span class="button__icon">
+												<svg>
+													<use xlink:href="img/icons/icons.svg#arrow"></use>
+												</svg>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="reviews-items__item">
+							<div class="review">
+								<div class="review__top">
+									<div class="review__title">Название компаниии</div>
+								</div>
+								<div class="review__body text">
+									<p>
+										Выражаем благодарность кампании ООО «Лайкит» за работу по разработке и поддержке
+										наших
+										сайтов: hankook-warranty.ru/laufenn-warranty.ru
+									</p>
+									<p>
+										В процессе сотрудничества компания ООО «Лайкит» зарекомендовала себя как надежный и
+										порядочный партнер, готовый к открытому Многоплановому и долговременному
+										сотрудничеству.
+										Сотрудники ООО «Лайкит» показали себя как специалисты, способные решать
+										нестандартные
+										задачи. Дизайнерские решения, использованные в работе, были исполнены на высоком
+										уровне,
+										внедрена качественная программная разработка, которая весьма ощутимо повысила
+										скорость
+										реализации изменений на сайте.
+									</p>
+									<p>
+										Все работы были выполнены качественно и в срок. В результате взаимного
+										сотрудничества
+										наша компания получила соответствующий всем требованиям и по дизайну, и по
+										функциональности Интернет-ресурс.
+									</p>
+								</div>
+								<div class="review__footer">
+									<div class="review__user user-review">
+										<div class="user-review__info">
+											<img src="img/main/avatars/01.webp" alt="Image" class="user-review__icon">
+											<div class="user-review__year">2024 год</div>
+											<div class="user-review__category">
+												<p>Юн Сынг Хван ,</p>
+												<p>Генеральный директор 000 «Ханкук Тайр Рус»</p>
+											</div>
+										</div>
+										<a href="" class="button button_second user-review__btn">
+											<span class="button__text">Смотреть отзыв</span>
+											<span class="button__icon">
+												<svg>
+													<use xlink:href="img/icons/icons.svg#arrow"></use>
+												</svg>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="reviews-items__item">
+							<div class="review">
+								<div class="review__top">
+									<div class="review__title">Название компаниии</div>
+								</div>
+								<div class="review__body text">
+									<p>
+										Выражаем благодарность кампании ООО «Лайкит» за работу по разработке и поддержке
+										наших
+										сайтов: hankook-warranty.ru/laufenn-warranty.ru
+									</p>
+									<p>
+										В процессе сотрудничества компания ООО «Лайкит» зарекомендовала себя как надежный и
+										порядочный партнер, готовый к открытому Многоплановому и долговременному
+										сотрудничеству.
+										Сотрудники ООО «Лайкит» показали себя как специалисты, способные решать
+										нестандартные
+										задачи. Дизайнерские решения, использованные в работе, были исполнены на высоком
+										уровне,
+										внедрена качественная программная разработка, которая весьма ощутимо повысила
+										скорость
+										реализации изменений на сайте.
+									</p>
+									<p>
+										Все работы были выполнены качественно и в срок. В результате взаимного
+										сотрудничества
+										наша компания получила соответствующий всем требованиям и по дизайну, и по
+										функциональности Интернет-ресурс.
+									</p>
+								</div>
+								<div class="review__footer">
+									<div class="review__user user-review">
+										<div class="user-review__info">
+											<img src="img/main/avatars/01.webp" alt="Image" class="user-review__icon">
+											<div class="user-review__year">2024 год</div>
+											<div class="user-review__category">
+												<p>Юн Сынг Хван ,</p>
+												<p>Генеральный директор 000 «Ханкук Тайр Рус»</p>
+											</div>
+										</div>
+										<a href="" class="button button_second user-review__btn">
+											<span class="button__text">Смотреть отзыв</span>
+											<span class="button__icon">
+												<svg>
+													<use xlink:href="img/icons/icons.svg#arrow"></use>
+												</svg>
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="partners section section_dark">
+				<button class="section__arrow" data-goto-header data-goto=".partners">
+					<svg>
+						<use xlink:href="img/icons/icons.svg#arrow"></use>
+					</svg>
+				</button>
+				<div class="container">
+					<div class="section__header">
+						<h2 class="section__title title">
+							<small class="title__small">Наши <span>клиенты</span></small>
+							<strong class="title__big">нам доверяют</strong>
+						</h2>
+						<div class="section__text text text_xl">
+							<span>Мы работаем максимально прозрачно</span>, так как наш рост напрямую зависит
+							от роста наших клиентов
+						</div>
+					</div>
+					<div class="partners__body swiper">
+						<div class="partners__wrapper swiper-wrapper">
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/01.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										сделали 3 проекта
+										8&nbsp;лет вместе
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/02.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										сделали 7 проектов
+										4&nbsp;года вместе
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/03.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										сделали 5 проектов
+										8&nbsp;лет вместе
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/04.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										NDA
+										1 год вместе
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/05.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										сделали 1 проект
+										3&nbsp;года вместе
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/06.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										сделали 3 проекта
+										8&nbsp;лет вместе
+									</div>
+								</div>
+							</div>
+							<div class="partners__slide swiper-slide">
+								<div class="partner">
+									<div class="partner__img">
+										<img src="img/main/partner/06.webp" alt="Image" class="ibg">
+									</div>
+									<div class="partner__text text">
+										сделали 3 проекта
+										8&nbsp;лет вместе
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Если нужен скролбар -->
+						<div class="swiper-scrollbar"></div>
+					</div>
+				</div>
+			</section>
+			<section class="seo-text section section_bottom bottom-decoration">
+				<div class="container">
+					<h2 class="seo-text__title title-page title-page_h2">SEO заголовок</h2>
+					<div data-showmore class="seo-text__info">
+						<div class="text">
+							Патентное бюро PATENTUS специализируется на регистрации объектов интеллектуальной
+							собственности и их юридической защите в России и за рубежом. Мы умеем решать
+							нестандартные и
+							сложные задачи. патентные поверенные помогут успешно зарегистрировать и защитить ваши
+							исключительные права.
+						</div>
+						<div data-showmore-content="0" class="seo-text__content text">
+
+							<p><strong class="text_xl text"> Основные услуги в отношении товарных знаков</strong></p>
+
+							<p><strong> Предварительная проверка</strong></p>
+
+							<p>
+								Оценка шансов на регистрацию предложенного клиентом фирменного обозначения. Проверка
+								национальных и международных реестров. Поиск тождественных или сходных до степени
+								смешения
+								элементов товарного знака. Выдача экспертного заключения.
+							</p>
+
+							<p><strong>Регистрация на территории России</strong></p>
+
+							<p> Бесплатная консультация с целью оценки шансов на прохождение экспертизы фирменного
+								обозначения. Определение классов МКТУ, в отношении которых будет регистрироваться
+								товарный
+								знак. Предварительная проверка обозначения, оформление заявки на регистрацию товарного
+								знака
+								и подача ее в Роспатент. Сопровождение рассмотрения поданных документов, прохождение
+								экспертиз вплоть до выдачи свидетельства.</p>
+
+							<p><strong>Международная регистрация торговой марки</strong></p>
+
+							<p> В услугу входит консультация, предварительная проверка предложенного клиентом бренда или
+								логотипа. Оформление заявки по Мадридской системе (юридическая защита на территории
+								более
+								100 стран мира). Помощь в оплате международных пошлин, контроль сроков, получение
+								официальной корреспонденции из Роспатента и ВОИС. При необходимости патентный поверенный
+								отвечает на запросы регистрирующих органов. Получение международного сертификата.</p>
+						</div>
+						<button hidden data-showmore-button type="button" class="seo-text__more button button_green">
+							<span>Показать еще</span><span>Свернуть</span>
+						</button>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__top top-footer">
+					<div class="top-footer__about">
+						<a href="/" class="footer__logo logo">
+							<picture>
+								<source media="(min-width: 480px)" srcset="img/logo.webp">
+								<img class="logo__img" src="img/logo_m.svg" alt="Logo">
+							</picture>
+						</a>
+						<div class="footer__social">
+							<a href="" class="social-item">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#tg"></use>
+								</svg>
+							</a>
+							<a href="" class="social-item">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#vk"></use>
+								</svg>
+							</a>
+							<a href="" class="social-item">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#youtube"></use>
+								</svg>
+							</a>
+						</div>
+						<div class="footer__text">
+							<p>© 2011—2025 «Обедин и Партнеры»</p>
+							<p>ИНН: 9704062264</p>
+							<p> ОГРН: 1217700196560</p>
+						</div>
+					</div>
+					<div class="top-footer__navigation">
+						<div class="top-footer__col-contacts">
+							<div class="footer__contacts">
+								<small>Время работы с 9:00 до 18:00 по Москве</small>
+								<a class="footer__link" href="mailto:info@obedinpartners.ru">info@obedinpartners.ru</a>
+							</div>
+							<div class="footer__contacts">
+								<small>г.Москва, ул.Жуковского, д.11</small>
+								<a class="footer__link" href="tel:+74994600013">+7 499 460 00 13</a>
+							</div>
+						</div>
+						<div class="top-footer__col-menu">
+							<div class="footer__menu menu-footer">
+								<ul>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Услуги</a></li>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Торговые знаки</a></li>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Патенты</a></li>
+								</ul>
+							</div>
+							<div class="footer__menu menu-footer">
+								<ul>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Суды и споры</a></li>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">E-commerce</a></li>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Договоры</a></li>
+									<li class="menu-footer__item"><a class="menu-footer__link" href="">Защита IT технологий</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="footer__slider footer-slider">
+					<div class="footer-slider__body swiper">
+						<div class="footer-slider__wrapper swiper-wrapper">
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Проверка <br> на&nbsp;уникальность</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Разработка <br> товарного знака</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Проверка <br> на&nbsp;патентную чистоту</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Ускорение <br> патентной экспертизы</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Патентование <br> дизайна в&nbsp;Евразии</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Проверка <br> на&nbsp;уникальность</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Разработка <br> товарного знака</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Проверка <br> на&nbsp;патентную чистоту</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Ускорение <br> патентной экспертизы</a>
+							</div>
+							<div class="footer-slider__slide swiper-slide">
+								<a class="footer-slider-link text" href="">Патентование <br> дизайна в&nbsp;Евразии</a>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-controls">
+						<button type="button" class="swiper-button swiper-button-prev">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#arrow"></use>
+							</svg>
+						</button>
+						<button type="button" class="swiper-button swiper-button-next">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#arrow"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="footer__copy">
+					<p>Юридическая компания “Обедин и Партнеры”</p>
+					<p>Мы поможем вам решить вопросы приобретения, использования и
+						защиты интеллектуальной собственности. Мы сможем защитить даже самые дерзкие идеи.</p>
+				</div>
+			</div>
+		</footer>
+
+		<div id="review-img" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close">
+						<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14.1027 11.8392L11.8635 14.0784L7.33802 9.55288L2.78897 14.1019L0.549798 11.8628L5.09885 7.31371L0.549798 2.76465L2.78897 0.525483L7.33802 5.07454L11.8635 0.549054L14.1027 2.78823L9.5772 7.31371L14.1027 11.8392Z" fill="#173867" />
+						</svg>
+					</button>
+					<div class="popup__title text-xxl">Отзыв - <span>Название компаниии</span></div>
+					<div class="popup__review-img">
+						<img class="ibg" src="img/reviews/review-1.webp" alt="Image">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="js/common.js?_v=1.0.0"></script>
+	<script src="js/swiper.js?_v=1.0.0"></script>
+	<script src="js/tabs.js?_v=1.0.0"></script>
+	<script src="js/show-more.js?_v=1.0.0"></script>
+	<script src="js/popup.js?_v=1.0.0"></script>
+
+</body>
+
+</html>

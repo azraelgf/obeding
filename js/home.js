@@ -3,8 +3,8 @@
         713: function(module, exports) {
             var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
             (function(global, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ module, exports ], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, 
-                __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ module, exports ], __WEBPACK_AMD_DEFINE_FACTORY__ = factory,
+                __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__,
                 __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)); else ;
             })(0, (function(module, exports) {
                 "use strict";
@@ -2869,7 +2869,7 @@
             },
             quickTo: function quickTo(target, property, vars) {
                 var _setDefaults2;
-                var tween = gsap.to(target, _setDefaults((_setDefaults2 = {}, _setDefaults2[property] = "+=0.1", 
+                var tween = gsap.to(target, _setDefaults((_setDefaults2 = {}, _setDefaults2[property] = "+=0.1",
                 _setDefaults2.paused = true, _setDefaults2.stagger = 0, _setDefaults2), vars || {})), func = function func(value, start, startIsRelative) {
                     return tween.resetTo(property, value, start, startIsRelative);
                 };
@@ -3073,9 +3073,9 @@
         Tween.version = Timeline.version = gsap.version = "3.13.0";
         _coreReady = 1;
         _windowExists() && _wake();
-        _easeMap.Power0, _easeMap.Power1, _easeMap.Power2, _easeMap.Power3, _easeMap.Power4, 
-        _easeMap.Linear, _easeMap.Quad, _easeMap.Cubic, _easeMap.Quart, _easeMap.Quint, 
-        _easeMap.Strong, _easeMap.Elastic, _easeMap.Back, _easeMap.SteppedEase, _easeMap.Bounce, 
+        _easeMap.Power0, _easeMap.Power1, _easeMap.Power2, _easeMap.Power3, _easeMap.Power4,
+        _easeMap.Linear, _easeMap.Quad, _easeMap.Cubic, _easeMap.Quart, _easeMap.Quint,
+        _easeMap.Strong, _easeMap.Elastic, _easeMap.Back, _easeMap.SteppedEase, _easeMap.Bounce,
         _easeMap.Sine, _easeMap.Expo, _easeMap.Circ;
         /*!
  * CSSPlugin 3.13.0
@@ -3953,6 +3953,5 @@
                 ease: "power2.inOut"
             });
         }));
-        window["FLS"] = false;
     })();
 })();

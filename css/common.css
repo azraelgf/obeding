@@ -161,9 +161,15 @@ h6 {
   display: grid;
   gap: 2.5rem
 }
+.popup__form .form__inner {
+  gap: 1.25rem
+}
 .form__row {
   display: flex;
   gap: 1.25rem
+}
+.info-calc-item__body .form__row {
+  max-width: 43.75rem
 }
 .form__column {
   flex: 1 1 auto
@@ -453,11 +459,10 @@ textarea.input {
 .title-page.title-page_h2 {
   font-size: 2rem
 }
+.calc__title .title-page,
 .section_dark .title-page {
-  color: var(--white)
-}
-.calc__title .title-page {
-  color: var(--white)
+  color: var(--white);
+  line-height: 1.3
 }
 .text-xxl {
   font-weight: 600;
@@ -658,6 +663,58 @@ textarea.input {
   z-index: -1;
   background: linear-gradient(180deg,#fff 0,#f1f1f1 100%)
 }
+.swiper {
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0
+}
+.swiper-initialized {
+  touch-action: pan-y;
+  visibility: visible;
+  opacity: 1;
+  transition: all .3s ease-in-out
+}
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  display: flex;
+  position: relative
+}
+.swiper-vertical .swiper-wrapper {
+  flex-direction: column
+}
+.swiper-autoheight .swiper-wrapper {
+  align-items: flex-start
+}
+.swiper-initialized .swiper-slide {
+  flex-shrink: 0
+}
+.swiper-android .swiper-slide,
+.swiper-android .swiper-wrapper {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0)
+}
+.swiper-button-lock {
+  display: none!important
+}
+.swiper-scrollbar {
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 3px
+}
+.section_dark .swiper-scrollbar {
+  background: #12315d
+}
+.swiper-scrollbar-drag {
+  background: var(--secondary);
+  border-radius: 3px;
+  height: 6px;
+  width: 10px
+}
+.section_dark .swiper-scrollbar-drag {
+  background: var(--accent)
+}
 @media (min-width:29.99875em) {
   .container,
   [class*=__container] {
@@ -668,8 +725,15 @@ textarea.input {
   }
 }
 @media (min-width:47.99875em) {
+  .popup__form .form__row {
+    flex-direction: column
+  }
   .form__button {
     min-width: 100%
+  }
+  .popup__form .form__button {
+    min-width: initial;
+    max-width: 20.375rem
   }
 }
 @media (min-width:61.99875em) {
